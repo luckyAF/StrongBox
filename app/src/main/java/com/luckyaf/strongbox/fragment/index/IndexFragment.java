@@ -1,4 +1,4 @@
-package com.luckyaf.strongbox.fragment.file;
+package com.luckyaf.strongbox.fragment.index;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,20 +9,18 @@ import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.fragment.BaseFragment;
 
 /**
- * 类描述：文件
+ * 类描述：首页
  *
  * @auther XCF
  */
-public  class FileMainFragment extends BaseFragment {
-
-
-
+public class IndexFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         return inflater.inflate(R.layout.basefragment_layout, container, false);
     }
+
     @Override
     public BaseFragment newInstance(Bundle args) {
         return null;

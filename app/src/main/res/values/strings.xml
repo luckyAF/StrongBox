@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">StrongBox</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+
+    <!-- 菜单 -->
+    <string name="menu_index">首页</string>
+    <string name="menu_file">加密文件</string>
+    <string name="menu_program">加密程序</string>
+    <string name="menu_communication">加密通讯</string>
+    <string name="menu_diary">我的日记</string>
+    <string name="menu_code_books">密码本</string>
+    <string name="menu_help">帮助</string>
+    <string name="menu_settings">设置</string>
+
 </resources>
