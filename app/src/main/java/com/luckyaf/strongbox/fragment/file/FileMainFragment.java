@@ -21,7 +21,7 @@ public  class FileMainFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        return inflater.inflate(R.layout.basefragment_layout, container, false);
+        return inflater.inflate(R.layout.fragment_base, container, false);
     }
     @Override
     public BaseFragment newInstance(Bundle args) {

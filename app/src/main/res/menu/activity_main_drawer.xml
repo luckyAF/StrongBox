@@ -3,38 +3,36 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_index"
+            android:icon="@drawable/ic_menu_index"
             android:title="@string/menu_index" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:id="@+id/nav_file"
+            android:icon="@drawable/ic_menu_folder"
             android:title="@string/menu_file" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/nav_program"
+            android:icon="@drawable/ic_menu_program"
             android:title="@string/menu_program" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_menu_contact"
             android:title="@string/menu_communication" />
         <item
             android:id="@+id/nav_diary"
+            android:icon="@drawable/ic_menu_diary"
             android:title="@string/menu_diary"/>
         <item
-            android:id="@+id/nav_code_books"
+            android:id="@+id/nav_code_book"
+            android:icon="@drawable/ic_menu_code_book"
             android:title="@string/menu_code_books"/>
     </group>
 
     <item android:title="about">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_help" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_menu_settings"
                 android:title="@string/menu_settings" />
         </menu>
     </item>
