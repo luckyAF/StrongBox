@@ -1,4 +1,4 @@
-package com.luckyaf.strongbox.fragment.index;
+package com.luckyaf.strongbox.fragment.codeBook;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,24 +9,22 @@ import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.fragment.BaseFragment;
 
 /**
- * 类描述：首页
- *
- * @auther XCF
+ * 类描述： 密码本
+ * Created by luckyAF on 16/3/18.
  */
-public class IndexFragment extends BaseFragment {
-    private final String fragmentName = "IndexFragment(首页)";
-
+public class CodeBookFragment extends BaseFragment{
+    private final String fragmentName = "CodeBookFragment(密码本)";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        return inflater.inflate(R.layout.fragment_index, container, false);
+        return inflater.inflate(R.layout.fragment_code_book, container, false);
     }
 
-    public static IndexFragment newInstance(Bundle args) {
-        IndexFragment indexFragment = new IndexFragment();
-        indexFragment.setArguments(args);
-        return indexFragment;
+    public static CodeBookFragment newInstance(Bundle args) {
+        CodeBookFragment codeBookFragment = new CodeBookFragment();
+        codeBookFragment.setArguments(args);
+        return codeBookFragment;
     }
 
     @Override
@@ -50,7 +48,7 @@ public class IndexFragment extends BaseFragment {
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
 
     }
 }

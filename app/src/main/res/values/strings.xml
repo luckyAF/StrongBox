@@ -8,7 +8,7 @@
     <string name="menu_index">首页</string>
     <string name="menu_file">加密文件</string>
     <string name="menu_program">加密程序</string>
-    <string name="menu_communication">加密通讯</string>
+    <string name="menu_contact">加密通讯</string>
     <string name="menu_diary">我的日记</string>
     <string name="menu_code_books">密码本</string>
     <string name="menu_help">帮助</string>

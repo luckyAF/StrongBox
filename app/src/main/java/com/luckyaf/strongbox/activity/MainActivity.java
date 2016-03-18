@@ -4,9 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,6 +14,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.luckyaf.strongbox.R;
+import com.luckyaf.strongbox.fragment.codeBook.CodeBookFragment;
+import com.luckyaf.strongbox.fragment.contact.ContactFragment;
+import com.luckyaf.strongbox.fragment.diary.DiaryFragment;
+import com.luckyaf.strongbox.fragment.file.FileMainFragment;
+import com.luckyaf.strongbox.fragment.index.IndexFragment;
+import com.luckyaf.strongbox.fragment.program.ProgramFragment;
+import com.luckyaf.strongbox.fragment.settings.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,17 +33,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("test");
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -49,6 +43,16 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        initData();
+    }
+
+    public void initData(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Bundle bundle = new Bundle();
+        Fragment indexFragment = IndexFragment.newInstance(bundle);
+        fragmentTransaction.add(R.id.frame_main,indexFragment).commit();
+        _lastFragment = indexFragment;
     }
 
     @Override
@@ -89,22 +93,41 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        //_currentFragment = fragmentManager.;
-        int id = item.getItemId();
-
-        if (id == R.id.nav_index) {
-            // Handle the camera action
-        } else if (id == R.id.nav_code_book) {
-
-        } else if (id == R.id.nav_contact) {
-
-        } else if (id == R.id.nav_diary) {
-
-        } else if (id == R.id.nav_file) {
-
-        } else if (id == R.id.nav_program) {
-
+        Bundle bundle = new Bundle();
+        switch (item.getItemId()){
+            case R.id.nav_index:
+                _currentFragment = IndexFragment.newInstance(bundle);
+                break;
+            case R.id.nav_file:
+                _currentFragment = FileMainFragment.newInstance(bundle);
+                break;
+            case R.id.nav_program:
+                _currentFragment = ProgramFragment.newInstance(bundle);
+                break;
+            case R.id.nav_contact:
+                _currentFragment = ContactFragment.newInstance(bundle);
+                break;
+            case R.id.nav_diary:
+                _currentFragment = DiaryFragment.newInstance(bundle);
+                break;
+            case R.id.nav_code_book:
+                _currentFragment = CodeBookFragment.newInstance(bundle);
+                break;
+            case R.id.nav_settings:
+                _currentFragment = SettingsFragment.newInstance(bundle);
+                break;
+            default:
+                _currentFragment = _lastFragment;
+                break;
         }
+
+
+        if(!_currentFragment.isAdded()){
+            fragmentTransaction.hide(_lastFragment).add(R.id.frame_main,_currentFragment).commit();
+        }else{
+            fragmentTransaction.hide(_lastFragment).show(_currentFragment).commit();
+        }
+        _lastFragment = _currentFragment;
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

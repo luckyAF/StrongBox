@@ -18,9 +18,6 @@ import com.luckyaf.strongbox.R;
  */
 public abstract class BaseFragment extends Fragment implements View.OnClickListener {
 
-    protected String fragmentName = "BaseFragment";
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,7 +25,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         return inflater.inflate(R.layout.fragment_base, container, false);
     }
 
-    public abstract BaseFragment newInstance(Bundle args);
 
 
     public abstract void initWidget();
@@ -37,7 +33,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     public abstract void initListener();
 
-
+    public abstract String getFragmentName();
 
     @Override
     public void onDestroy() {
@@ -50,35 +46,35 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onPause() {
         // TODO Auto-generated method stub
-        Log.i(fragmentName, "onPause");
+        Log.i(getFragmentName(), "onPause");
         super.onPause();
     }
 
     @Override
     public void onResume() {
         // TODO Auto-generated method stub
-        Log.i(fragmentName, "onResume");
+        Log.i(getFragmentName(), "onResume");
         super.onResume();
     }
 
     @Override
     public void onStart() {
         // TODO Auto-generated method stub
-        Log.i(fragmentName, "onStart");
+        Log.i(getFragmentName(),"onStart");
         super.onStart();
     }
 
     @Override
     public void onStop() {
         // TODO Auto-generated method stub
-        Log.i(fragmentName, "onStop");
+        Log.i(getFragmentName(),"onStop");
         super.onStop();
     }
 
     @Override
     public void onDestroyView() {
         // TODO Auto-generated method stub
-        Log.i(fragmentName, "move to other view");
+        Log.i(getFragmentName(),"onDestroy");
         super.onDestroyView();
     }
 

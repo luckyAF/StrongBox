@@ -15,17 +15,20 @@ import com.luckyaf.strongbox.fragment.BaseFragment;
  */
 public  class FileMainFragment extends BaseFragment {
 
+    private final String fragmentName = "FileMainFragment(加密文件)";
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        return inflater.inflate(R.layout.fragment_base, container, false);
+        return inflater.inflate(R.layout.fragment_file, container, false);
     }
-    @Override
-    public BaseFragment newInstance(Bundle args) {
-        return null;
+
+    public static FileMainFragment newInstance(Bundle args) {
+        FileMainFragment fileMainFragment = new FileMainFragment();
+        fileMainFragment.setArguments(args);
+        return fileMainFragment;
     }
 
     @Override
@@ -41,6 +44,11 @@ public  class FileMainFragment extends BaseFragment {
     @Override
     public void initListener() {
 
+    }
+
+    @Override
+    public String getFragmentName() {
+        return fragmentName;
     }
 
     @Override

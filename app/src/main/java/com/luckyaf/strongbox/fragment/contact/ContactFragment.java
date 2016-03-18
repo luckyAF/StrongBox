@@ -1,4 +1,4 @@
-package com.luckyaf.strongbox.fragment.index;
+package com.luckyaf.strongbox.fragment.contact;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,24 +9,25 @@ import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.fragment.BaseFragment;
 
 /**
- * 类描述：首页
+ * 类描述：通讯
  *
- * @auther XCF
+ * @auhter. luckyAF
+ * 16/3/18
  */
-public class IndexFragment extends BaseFragment {
-    private final String fragmentName = "IndexFragment(首页)";
+public class ContactFragment extends BaseFragment{
+    private final String fragmentName = "ContactFragment(通讯锁)";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        return inflater.inflate(R.layout.fragment_index, container, false);
+        return inflater.inflate(R.layout.fragment_contact, container, false);
     }
 
-    public static IndexFragment newInstance(Bundle args) {
-        IndexFragment indexFragment = new IndexFragment();
-        indexFragment.setArguments(args);
-        return indexFragment;
+    public static ContactFragment newInstance(Bundle args) {
+        ContactFragment contactFragment = new ContactFragment();
+        contactFragment.setArguments(args);
+        return contactFragment;
     }
 
     @Override
@@ -50,7 +51,7 @@ public class IndexFragment extends BaseFragment {
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
 
     }
 }

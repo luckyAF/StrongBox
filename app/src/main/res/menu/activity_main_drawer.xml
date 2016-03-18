@@ -17,7 +17,7 @@
         <item
             android:id="@+id/nav_contact"
             android:icon="@drawable/ic_menu_contact"
-            android:title="@string/menu_communication" />
+            android:title="@string/menu_contact" />
         <item
             android:id="@+id/nav_diary"
             android:icon="@drawable/ic_menu_diary"
