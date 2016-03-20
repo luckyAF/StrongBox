@@ -30,7 +30,7 @@ public class IndexFragment extends BaseFragment {
     }
 
     @Override
-    public void initWidget() {
+    public void initWidget(View view) {
 
     }
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="file_type">
+        <item>图片</item>
+        <item>视频</item>
+        <item>音频</item>
+        <item>文件</item>
+    </string-array>
+    
+</resources>

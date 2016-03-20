@@ -32,7 +32,7 @@ public class DiaryFragment extends BaseFragment {
     }
 
     @Override
-    public void initWidget() {
+    public void initWidget(View view) {
     }
 
     @Override

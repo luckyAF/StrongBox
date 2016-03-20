@@ -1,4 +1,4 @@
-package com.luckyaf.strongbox.fragment.contact;
+package com.luckyaf.strongbox.fragment.file;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,27 +9,26 @@ import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.fragment.BaseFragment;
 
 /**
- * 类描述：通讯
+ * 类描述：音频
  *
- * @auhter. luckyAF
- * 16/3/18
+ * @auhter Created by luckyAF on 16/3/19
  */
-public class ContactFragment extends BaseFragment{
-    private final String fragmentName = "ContactFragment(通讯锁)";
+public class AudioFragment extends BaseFragment{
+
+    private final String fragmentName = "ImageFragment(加密音频)";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        return inflater.inflate(R.layout.fragment_file_audio, container, false);
     }
 
-    public static ContactFragment newInstance(Bundle args) {
-        ContactFragment contactFragment = new ContactFragment();
-        contactFragment.setArguments(args);
-        return contactFragment;
+    public static AudioFragment newInstance(Bundle args) {
+        AudioFragment audioFragment = new AudioFragment();
+        audioFragment.setArguments(args);
+        return audioFragment;
     }
-
     @Override
     public void initWidget(View view) {
 

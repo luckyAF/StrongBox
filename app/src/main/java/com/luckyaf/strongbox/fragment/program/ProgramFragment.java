@@ -32,7 +32,7 @@ public class ProgramFragment extends BaseFragment{
     }
 
     @Override
-    public void initWidget() {
+    public void initWidget(View view) {
 
     }
 

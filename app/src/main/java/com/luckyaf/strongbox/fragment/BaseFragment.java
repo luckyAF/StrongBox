@@ -27,7 +27,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
 
 
-    public abstract void initWidget();
+    public abstract void initWidget(View view);
 
     public abstract void initData();
 
