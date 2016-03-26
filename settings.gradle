@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':arity-2.1.6'

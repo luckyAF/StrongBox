@@ -6,4 +6,67 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <!-- 字体大小 -->
+    <!-- 按钮文字-->
+    <dimen name="font_button">14sp</dimen>
+    <!-- 菜单-->
+    <dimen name="font_menu">14sp</dimen>
+    <!-- 标题说明文字-->
+    <dimen name="font_caption">12sp</dimen>
+    <!-- 正文-->
+    <dimen name="font_body">14sp</dimen>
+    <!-- 小标题-->
+    <dimen name="font_subhead">16sp</dimen>
+    <!-- 标题-->
+    <dimen name="font_title">20sp</dimen>
+    <!-- 大标题-->
+    <dimen name="font_headline">24sp</dimen>
+    <!-- 显示 0 -->
+    <dimen name="font_display0">28sp</dimen>
+    <!-- 显示 1-->
+    <dimen name="font_display1">34sp</dimen>
+    <!-- 显示 2-->
+    <dimen name="font_display2">45sp</dimen>
+    <!-- 显示 3-->
+    <dimen name="font_display3">56sp</dimen>
+    <!-- 显示 4-->
+    <dimen name="font_display4">68sp</dimen>
+    <!-- 显示 5-->
+    <dimen name="font_display5">112sp</dimen>
+
+    <!-- 长度 -->
+    <dimen name="common_1">1dp</dimen>
+    <dimen name="common_2">2dp</dimen>
+    <dimen name="common_3">3dp</dimen>
+    <dimen name="common_4">4dp</dimen>
+    <dimen name="common_5">5dp</dimen>
+    <dimen name="common_6">6dp</dimen>
+    <dimen name="common_7">7dp</dimen>
+    <dimen name="common_8">8dp</dimen>
+    <dimen name="common_9">9dp</dimen>
+    <dimen name="common_10">10dp</dimen>
+    <dimen name="common_11">11dp</dimen>
+    <dimen name="common_12">12dp</dimen>
+    <dimen name="common_13">13dp</dimen>
+    <dimen name="common_14">14dp</dimen>
+    <dimen name="common_15">15dp</dimen>
+    <dimen name="common_16">16dp</dimen>
+    <dimen name="common_18">18dp</dimen>
+    <dimen name="common_20">20dp</dimen>
+    <dimen name="common_25">25dp</dimen>
+    <dimen name="common_30">30dp</dimen>
+    <dimen name="common_35">35dp</dimen>
+    <dimen name="common_40">40dp</dimen>
+    <dimen name="common_50">50dp</dimen>
+    <dimen name="common_60">60dp</dimen>
+    <dimen name="common_70">70dp</dimen>
+    <dimen name="common_80">80dp</dimen>
+    <dimen name="common_90">90dp</dimen>
+    <dimen name="common_100">100dp</dimen>
+    <dimen name="common_120">120dp</dimen>
+    <dimen name="common_140">140dp</dimen>
+    <dimen name="common_160">160dp</dimen>
+
+
+
 </resources>

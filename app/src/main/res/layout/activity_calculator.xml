@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.luckyaf.strongbox.control.CalculatorViewModel" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="calculator"
+            type="com.luckyaf.strongbox.control.CalculatorViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.luckyaf.strongbox.activity.CalculatorActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.38"
+                android:orientation="vertical"
+                android:paddingRight="@dimen/common_5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end">
+
+                    <ImageButton
+                        android:id='@+id/btn_change'
+                        android:layout_width="@dimen/common_35"
+                        android:layout_height="@dimen/common_35"
+                        android:layout_margin="@dimen/common_10"
+                        android:background="@drawable/bg_cal_change"
+                        android:onClick="@{calculator.onChangeClick}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2">
+
+                    <TextView
+                        android:id="@+id/et_above"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingLeft="@dimen/common_1"
+                        android:gravity="end|center_horizontal"
+                        android:ellipsize="start"
+                        android:background="@null"
+                        android:selectAllOnFocus="false"
+                        android:enabled="false"
+                        android:focusable="true"
+                        android:singleLine="true"
+                        android:text="@{calculator.input}"
+                        android:textColor="@{calculator.getError ? @color/error_text:@color/above_text}"
+                        android:textSize="@dimen/font_display4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2">
+
+                    <TextView
+                        android:id="@+id/et_under"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:selectAllOnFocus="false"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingLeft="@dimen/common_1"
+                        android:gravity="end|center_horizontal"
+                        android:ellipsize="start"
+                        android:enabled="false"
+                        android:focusable="true"
+                        android:singleLine="true"
+                        android:text="@{calculator.result}"
+                        android:textColor="@{calculator.getError ? @color/error_text:@color/above_text}"
+                        android:textSize="@dimen/font_display3" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.62">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lay_miss"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="@{calculator.getAll ? View.VISIBLE : View.GONE}">
+
+                        <Button
+                            android:id="@+id/btn_factorial"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/factorial" />
+
+                        <Button
+                            android:id="@+id/btn_power"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/power" />
+
+                        <Button
+                            android:id="@+id/btn_sqrt"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/sqrt" />
+
+                        <Button
+                            android:id="@+id/btn_pi"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/pi" />
+
+                        <Button
+                            android:id="@+id/btn_e"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/e" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_sin"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/sin"
+                            android:visibility="@{calculator.getAll ? View.VISIBLE : View.GONE}" />
+
+                        <Button
+                            android:id="@+id/btn_left_paren"
+                            style="@style/operate_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/leftParen"
+                            android:textSize="@{calculator.getAll ? @dimen/font_title : @dimen/font_headline}" />
+
+                        <Button
+                            android:id="@+id/btn_right_paren"
+                            style="@style/operate_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/rightParen"
+                            android:textSize="@{calculator.getAll ? @dimen/font_title : @dimen/font_headline}" />
+
+                        <Button
+                            android:id="@+id/btn_clear"
+                            style="@style/operate_button"
+                            android:onClick="@{calculator.onClearClick}"
+                            android:text="@string/clear"
+                            android:textSize="@{calculator.getAll ? @dimen/font_title : @dimen/font_headline}" />
+
+                        <Button
+                            android:id="@+id/btn_delete"
+                            style="@style/operate_button"
+                            android:onClick="@{calculator.onDeleteClick}"
+                            android:text="@string/delete"
+                            android:textSize="@{calculator.getAll ? @dimen/font_title : @dimen/font_headline}" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_cos"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/cos"
+                            android:visibility="@{calculator.getAll ? View.VISIBLE : View.GONE}" />
+
+                        <Button
+                            android:id="@+id/btn_digit7"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit7"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_digit8"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit8"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_digit9"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit9"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_div"
+                            style="@style/operate_button"
+                            android:onClick="@{calculator.onOperateClick}"
+                            android:text="@string/div"
+                            android:textSize="@{calculator.getAll ? @dimen/font_title : @dimen/font_headline}" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_tan"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/tan"
+                            android:visibility="@{calculator.getAll ? View.VISIBLE : View.GONE}" />
+
+                        <Button
+                            android:id="@+id/btn_digit4"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit4"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_digit5"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit5"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_digit6"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit6"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_mul"
+                            style="@style/operate_button"
+                            android:onClick="@{calculator.onOperateClick}"
+                            android:text="@string/mul"
+                            android:textSize="@{calculator.getAll ? @dimen/font_title : @dimen/font_headline}" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_ln"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/ln"
+                            android:visibility="@{calculator.getAll ? View.VISIBLE : View.GONE}" />
+
+                        <Button
+                            android:id="@+id/btn_digit1"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit1"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_digit2"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit2"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_digit3"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit3"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_minus"
+                            style="@style/operate_button"
+                            android:onClick="@{calculator.onOperateClick}"
+                            android:text="@string/minus"
+                            android:textSize="@{calculator.getAll ? @dimen/font_title : @dimen/font_headline}" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_log"
+                            style="@style/math_button"
+                            android:onClick="@{calculator.onMathClick}"
+                            android:text="@string/log"
+                            android:visibility="@{calculator.getAll ? View.VISIBLE : View.GONE}" />
+
+                        <Button
+                            android:id="@+id/btn_dot"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/dot"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_digit0"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onDigitClick}"
+                            android:text="@string/digit0"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_equal"
+                            style="@style/digit_button"
+                            android:onClick="@{calculator.onEqualsClick}"
+                            android:text="@string/equal"
+                            android:textSize="@{calculator.getAll ? @dimen/font_display1 : @dimen/font_display2}" />
+
+                        <Button
+                            android:id="@+id/btn_plus"
+                            style="@style/operate_button"
+                            android:onClick="@{calculator.onOperateClick}"
+                            android:text="@string/plus"
+                            android:textSize="@{calculator.getAll ? @dimen/font_title : @dimen/font_headline}" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
