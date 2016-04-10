@@ -1,24 +1,37 @@
 package com.luckyaf.strongbox.activity;
 
 import android.databinding.DataBindingUtil;
-import android.databinding.OnRebindCallback;
-import android.databinding.ViewDataBinding;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.control.CalculatorViewModel;
 import com.luckyaf.strongbox.databinding.ActivityCalculatorBinding;
-import com.luckyaf.strongbox.util.CalculatorDisplay;
 
-public class CalculatorActivity extends AppCompatActivity {
+public class CalculatorActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCalculatorBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_calculator);
-        CalculatorViewModel calculatorViewModel = new CalculatorViewModel();
+        CalculatorViewModel calculatorViewModel = new CalculatorViewModel(this,getResources());
         binding.setCalculator(calculatorViewModel);
+
+    }
+
+
+    @Override
+    protected void initToolbar() {
+
+    }
+
+    @Override
+    protected boolean isApplyTranslucency() {
+        return false;
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }

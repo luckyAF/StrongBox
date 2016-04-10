@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar_edit"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/et_title"
+                style="@style/EditTextTheme"
+                android:textSize="@dimen/font_display1"
+                android:background="@null"
+                android:layout_margin="@dimen/common_5"
+                android:hint="@string/hint_diary_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:padding="@dimen/common_10"
+                android:textSize="@dimen/font_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_marginLeft="@dimen/common_5"
+                android:layout_marginRight="@dimen/common_5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_1"
+                android:background="@color/black"/>
+
+            <EditText
+                android:id="@+id/et_content"
+                android:padding="@dimen/common_10"
+                android:inputType="textMultiLine"
+                android:gravity="start"
+                android:hint="@string/hint_diary_content"
+                android:background="@null"
+                android:minLines="15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

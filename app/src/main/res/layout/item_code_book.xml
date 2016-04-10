@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="com.luckyaf.strongbox.control.PasswordViewModel"/>
+        <import type="android.text.InputType"/>
+        <variable
+            name="password"
+            type="com.luckyaf.strongbox.control.PasswordViewModel"/>
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_10"
+
+        android:background="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="8dp">
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:mrl_rippleOverlay="true"
+            app:mrl_rippleColor="?attr/colorPrimary"
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{password.onItemClick}"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                style="@style/edit_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/code_book_title" />
+
+                <TextView
+                    android:id="@+id/title_edit_text"
+                    style="@style/EditTextTheme"
+                    android:text="@{password.title}"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/edit_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/code_book_userName" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    style="@style/EditTextTheme"
+                    android:text="@{password.userName}"
+                    android:lineSpacingExtra="0dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/edit_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/code_book_password" />
+
+                <EditText
+                    android:id="@+id/passWord"
+                    style="@style/EditTextTheme"
+                    android:enabled="false"
+                    android:background="@null"
+                    android:text="@{password.passWord}"
+                    android:inputType="@{password.getCanSee ? InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD : InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD}"
+                    android:lineSpacingExtra="4dp" />
+                />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
+</layout>

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/StrongBox.iml" filepath="$PROJECT_DIR$/StrongBox.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/arity-2.1.6/arity-2.1.6.iml" filepath="$PROJECT_DIR$/arity-2.1.6/arity-2.1.6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/daostrongboxdaogenerator/daostrongboxdaogenerator.iml" filepath="$PROJECT_DIR$/daostrongboxdaogenerator/daostrongboxdaogenerator.iml" />
     </modules>
   </component>
 </project>

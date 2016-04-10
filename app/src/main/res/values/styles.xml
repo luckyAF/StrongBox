@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -17,9 +18,20 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- 编辑页面 activity主题-->
+    <style name="CommonAppTheme" parent="AppTheme.NoActionBar">
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="EditTheme" parent="AppTheme.NoActionBar">
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/AnimFromBottom</item>
+    </style>
+
 
     <!-- 按钮-->
-    <style name="button_style" >
+    <style name="button_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:padding">0dp</item>
         <item name="android:gravity">center</item>
@@ -30,15 +42,55 @@
         <item name="android:layout_weight">1</item>
         <item name="android:textAllCaps">false</item>
     </style>
+
     <style name="digit_button" parent="button_style">
-        <item name="android:background">@drawable/digit_ripple</item>
+        <item name="android:background">@color/digit_button</item>
     </style>
+
     <style name="operate_button" parent="button_style">
-        <item name="android:background">@drawable/operate_ripple</item>
+        <item name="android:background">@color/operate_button</item>
     </style>
+
     <style name="math_button" parent="button_style">
-        <item name="android:background">@drawable/math_ripple</item>
+        <item name="android:background">@color/math_button</item>
         <item name="android:textSize">@dimen/font_headline</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="EditTextTheme">
+        <item name="android:textSize">@dimen/abc_text_size_small_material</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:paddingLeft">@dimen/common_5</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="edit_padding">
+        <item name="android:padding">@dimen/common_10</item>
+    </style>
+
+    <style name="AnimFromBottom" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_to_top</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_in_from_bottom</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_out_to_top</item>
     </style>
 
 </resources>

@@ -1,13 +1,18 @@
 package com.luckyaf.strongbox.control;
 
+import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import com.luckyaf.strongbox.BR;
 import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.activity.CalculatorActivity;
 import com.luckyaf.strongbox.activity.MainActivity;
+import com.luckyaf.strongbox.util.VibrateUtils;
 
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 
@@ -37,8 +42,13 @@ public class CalculatorViewModel extends BaseObservable {
     private static String mErrorString = "Error";
     private static final int ROUND_DIGITS = 1;
 
+    private Context mContext;
+    private Resources mResources;
 
-    public CalculatorViewModel(){
+
+    public CalculatorViewModel(Context context , Resources resources){
+        mContext = context;
+        mResources = resources;
         setAll(false);
         setError(false);
         setInput("");
@@ -110,10 +120,12 @@ public class CalculatorViewModel extends BaseObservable {
     }
 
     public void onChangeClick(View view){
+        VibrateUtils.vShort(mContext);
         setAll(!isAll);
     }
 
     public void onDigitClick(View view){
+        VibrateUtils.vShort(mContext);
         if (view instanceof Button) {
             String text = ((Button) view).getText().toString();
             insert(text);
@@ -122,6 +134,7 @@ public class CalculatorViewModel extends BaseObservable {
 
     }
     public void onMathClick(View view){
+        VibrateUtils.vShort(mContext);
         if (view instanceof Button) {
             String text = ((Button) view).getText().toString();
             insert(text);
@@ -130,6 +143,7 @@ public class CalculatorViewModel extends BaseObservable {
     }
 
     public void onOperateClick(View view){
+        VibrateUtils.vShort(mContext);
         if (view instanceof Button) {
             String text = ((Button) view).getText().toString();
             if(input.length() >= 1 && isOperator(input.charAt(input.length()-1))){
@@ -143,15 +157,17 @@ public class CalculatorViewModel extends BaseObservable {
     }
 
     public void onEqualsClick(View view){
+        VibrateUtils.vShort(mContext);
         calculator();
         if(input.equals("123456")){
-            Intent intent = new Intent(view.getContext(), MainActivity.class);
-            view.getContext().startActivity(intent);
-            ((CalculatorActivity)view.getContext()).finish();
+            Intent intent = new Intent(mContext, MainActivity.class);
+            mContext.startActivity(intent);
+            ((CalculatorActivity)mContext).finish();
         }
     }
 
     public void onDeleteClick(View view){
+        VibrateUtils.vShort(mContext);
         int size = input.length();
         if (size > 0 ) {
             input = input.substring(0, size - 1);
@@ -161,11 +177,15 @@ public class CalculatorViewModel extends BaseObservable {
     }
 
     public void onClearClick(View view){
+        VibrateUtils.vShort(mContext);
         setInput("");
         setResult("");
         setError(false);
     }
 
+    /**
+    * 实时计算
+    * */
     public void realTimeCalculator(){
         String text = input;
         String history = result;
