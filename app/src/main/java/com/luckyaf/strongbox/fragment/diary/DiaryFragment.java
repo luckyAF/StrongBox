@@ -1,17 +1,34 @@
 package com.luckyaf.strongbox.fragment.diary;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.luckyaf.strongbox.MyApplication;
 import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.activity.EditDiaryActivity;
 import com.luckyaf.strongbox.activity.EditPassWordActivity;
+import com.luckyaf.strongbox.adapter.CodeBookAdapter;
+import com.luckyaf.strongbox.adapter.DiaryAdapter;
+import com.luckyaf.strongbox.control.DiaryViewModel;
+import com.luckyaf.strongbox.control.PasswordViewModel;
 import com.luckyaf.strongbox.fragment.BaseFragment;
 import com.luckyaf.strongbox.util.Constant;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import de.greenrobot.dao.query.Query;
+import me.luckyaf.greendao.CodeBook;
+import me.luckyaf.greendao.CodeBookDao;
+import me.luckyaf.greendao.Diary;
+import me.luckyaf.greendao.DiaryDao;
 
 /**
  * 类描述：日记
@@ -22,6 +39,9 @@ import com.luckyaf.strongbox.util.Constant;
 public class DiaryFragment extends BaseFragment {
 
     private final String fragmentName = "DiaryFragment(日记本)";
+    private ArrayList<DiaryViewModel> diaryViewModelArrayList = new ArrayList<>();
+    private RecyclerView mRecyclerView;
+    private DiaryAdapter mDiaryAdapter;
     private Button _btnAdd;
 
     @Override
@@ -44,11 +64,25 @@ public class DiaryFragment extends BaseFragment {
     @Override
     public void initWidget(View view) {
         _btnAdd = (Button)view.findViewById(R.id.btn_add);
+        mRecyclerView = (RecyclerView)view.findViewById(R.id.recyclerView_diary);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+
+        mDiaryAdapter = new DiaryAdapter(diaryViewModelArrayList);
+        mRecyclerView.setAdapter(mDiaryAdapter);
     }
 
     @Override
     public void initData() {
-
+        Query query = MyApplication.daoMaster.newSession().getDiaryDao().queryBuilder()
+                .orderAsc(DiaryDao.Properties.Id)
+                .build();
+        List diaries = query.list();
+        diaryViewModelArrayList.clear();
+        for(int i = 0; i < diaries.size(); i ++){
+            DiaryViewModel model = new DiaryViewModel(getContext(),(Diary) diaries.get(i));
+            diaryViewModelArrayList.add(model);
+        }
+        mDiaryAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -59,6 +93,15 @@ public class DiaryFragment extends BaseFragment {
     @Override
     public String getFragmentName() {
         return fragmentName;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == Activity.RESULT_OK){
+            initData();
+        }
+
     }
 
     @Override

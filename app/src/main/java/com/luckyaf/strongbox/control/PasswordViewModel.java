@@ -19,9 +19,6 @@ import me.luckyaf.greendao.CodeBook;
  */
 public class PasswordViewModel extends BaseObservable {
     private String id;
-
-
-
     private String title;        //标题                    // 100
     private String userName;     //用户名                  // 100
     private String passWord;     // 密码                  //  100

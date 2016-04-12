@@ -28,7 +28,7 @@ public class DateUtils {
     }
 
     /**
-     * String 转换 Date
+     * String 转换 yyyy年MM月dd日 HH:mm
 
      * @param time
      * @return

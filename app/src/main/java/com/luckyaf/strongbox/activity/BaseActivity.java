@@ -41,10 +41,10 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         toolbar.setTitle(getString(R.string.app_name));
 
         setSupportActionBar(toolbar);
-       /* if (getSupportActionBar() != null) {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }*/
+        }
     }
 
     @TargetApi(19)

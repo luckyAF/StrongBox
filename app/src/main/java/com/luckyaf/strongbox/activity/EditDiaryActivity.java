@@ -1,8 +1,11 @@
 package com.luckyaf.strongbox.activity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +16,7 @@ import android.widget.TextView;
 import com.luckyaf.strongbox.MyApplication;
 import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.util.DateUtils;
+import com.luckyaf.strongbox.util.ToastUtils;
 
 import de.greenrobot.dao.query.Query;
 import me.luckyaf.greendao.CodeBookDao;
@@ -65,7 +69,7 @@ public class EditDiaryActivity extends BaseSwipeBackActivity implements TextWatc
         initDiary();
         isUpdate = getIntent().getBooleanExtra(EditDiaryActivity.intent_is_update,false);
         if (isUpdate) {
-            itemDelete.setVisible(true);
+           // itemDelete.setVisible(true);
             diaryId = getIntent().getStringExtra(EditDiaryActivity.intent_diary_id);
             // mCodeBook = MyApplication.daoMaster.newSession().getCodeBookDao().
             Query query = MyApplication.daoMaster.newSession().getDiaryDao().queryBuilder()
@@ -73,26 +77,47 @@ public class EditDiaryActivity extends BaseSwipeBackActivity implements TextWatc
                     .build();
             mDiary = (Diary) query.list().get(0);
             mToolbar.setTitle(getString(R.string.common_look));
+            //itemDelete.setVisible(true);
         }else{
             mToolbar.setTitle(getString(R.string.common_new));
         }
 
         etTitle.setText(mDiary.getTitle());
-        tvTime.setText(DateUtils.TimeMills2DateWeek(mDiary.getCreateTime()));
+        tvTime.setText("写于 " + DateUtils.TimeMills2DateWeek(mDiary.getUpdateTime()));
         etContent.setText(mDiary.getContent());
     }
 
     public void initListener(){
-
+        etTitle.addTextChangedListener(this);
+        etContent.addTextChangedListener(this);
     }
     public void initDiary(){
         mDiary = new Diary();
         mDiary.setTitle(null);
         mDiary.setCreateTime(DateUtils.currentTime2String());
         mDiary.setContent(null);
-        mDiary.setUpdateTime(null);
+        mDiary.setUpdateTime(DateUtils.currentTime2String());
         mDiary.setWeather(null);
     }
+
+    public void saveData(){
+        mDiary.setTitle(etTitle.getText().toString().trim());
+        mDiary.setContent(etContent.getText().toString().trim());
+
+        if(isUpdate){
+            mDiary.setUpdateTime(DateUtils.currentTime2String());
+            MyApplication.daoMaster.newSession().getDiaryDao().update(mDiary);
+            ToastUtils.showMessage(getBaseContext(),getString(R.string.common_save_succeed));
+        }else{
+            mDiary.setCreateTime(DateUtils.currentTime2String());
+            mDiary.setUpdateTime(DateUtils.currentTime2String());
+            MyApplication.daoMaster.newSession().getDiaryDao().insert(mDiary);
+            ToastUtils.showMessage(getBaseContext(),getString(R.string.common_update_succeed));
+        }
+        setResult(RESULT_OK);
+        finish();
+    }
+
     @Override
     public void onClick(View v) {
 
@@ -111,13 +136,42 @@ public class EditDiaryActivity extends BaseSwipeBackActivity implements TextWatc
         itemDelete = menu.findItem(R.id.delete);
         itemDone.setVisible(false);
         itemDelete.setVisible(false);
+        if(isUpdate){
+            itemDelete.setVisible(true);
+        }
         return true;
+    }
+
+    public void deleteData(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.common_tip));
+        builder.setMessage(getString(R.string.message_confirm_delete));//
+        builder.setPositiveButton(getString(R.string.common_confirm), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                MyApplication.daoMaster.newSession().getDiaryDao().delete(mDiary);
+                dialog.dismiss();
+                setResult(RESULT_OK);
+                finish();
+            }
+        });
+        builder.setNegativeButton(getString(R.string.common_cancel), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.done:
+                saveData();
+                break;
+            case R.id.delete:
+                deleteData();
                 break;
             case android.R.id.home:
                 finish();
@@ -139,6 +193,12 @@ public class EditDiaryActivity extends BaseSwipeBackActivity implements TextWatc
 
     @Override
     public void afterTextChanged(Editable s) {
-
+        String title = etTitle.getText().toString().trim();
+        String content = etContent.getText().toString().trim();
+        if (TextUtils.isEmpty(title) || TextUtils.isEmpty(content)) {
+            itemDone.setVisible(false);
+        }else{
+            itemDone.setVisible(true);
+        }
     }
 }

@@ -9,37 +9,33 @@ import android.view.ViewGroup;
 
 import com.luckyaf.strongbox.BR;
 import com.luckyaf.strongbox.R;
-import com.luckyaf.strongbox.control.CalculatorViewModel;
-import com.luckyaf.strongbox.control.PasswordViewModel;
+import com.luckyaf.strongbox.control.DiaryViewModel;
 
 import java.util.ArrayList;
-
-import me.luckyaf.greendao.CodeBook;
 
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/6
+ * @auhter Created by luckyAF on 16/4/10
  */
-public class CodeBookAdapter extends RecyclerView.Adapter<CodeBookAdapter.ViewHolder> {
+public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> {
 
-    private ArrayList<PasswordViewModel> mData = new ArrayList<>();
-    public CodeBookAdapter(ArrayList<PasswordViewModel> data) {
+    private ArrayList<DiaryViewModel> mData = new ArrayList<>();
+    public DiaryAdapter(ArrayList<DiaryViewModel> data) {
         mData = data;
     }
-
     @Override
-    public CodeBookAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater
-                .from(parent.getContext()), R.layout.item_code_book, parent, false);
-        CodeBookAdapter.ViewHolder holder = new ViewHolder(binding.getRoot());
+                .from(parent.getContext()), R.layout.item_diary, parent, false);
+        DiaryAdapter.ViewHolder holder = new ViewHolder(binding.getRoot());
         holder.setBinding(binding);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(CodeBookAdapter.ViewHolder holder, int position) {
-        holder.getBinding().setVariable(BR.password,mData.get(position));
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.getBinding().setVariable(BR.diary,mData.get(position));
         holder.getBinding().executePendingBindings();
     }
 
@@ -47,7 +43,6 @@ public class CodeBookAdapter extends RecyclerView.Adapter<CodeBookAdapter.ViewHo
     public int getItemCount() {
         return mData.size();
     }
-
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private ViewDataBinding binding;
