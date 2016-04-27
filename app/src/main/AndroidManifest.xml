@@ -3,6 +3,9 @@
     package="com.luckyaf.strongbox">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/><!-- 获得正在运行的应用程序权限 -->
 
     <application
         android:allowBackup="true"
@@ -12,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.login.LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/CommonAppTheme">
             <intent-filter>
@@ -23,12 +26,20 @@
         <activity
             android:name=".activity.MainActivity"
             android:theme="@style/CommonAppTheme" />
+        <activity android:name=".activity.login.FirstUseActivity"
+            android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.CalculatorActivity"
+            android:name=".activity.login.CalculatorActivity"
             android:theme="@style/CommonAppTheme" />
         <activity android:name=".activity.EditPassWordActivity"
             android:theme="@style/EditTheme"/>
         <activity android:name=".activity.EditDiaryActivity"
+            android:theme="@style/EditTheme"/>
+        <activity android:name=".activity.EditContactActivity"
+            android:theme="@style/EditTheme"/>
+        <activity android:name=".activity.AddLockProgramActivity"
+            android:theme="@style/EditTheme"/>
+        <activity android:name=".util.image.SelectImageActivity"
             android:theme="@style/EditTheme"/>
 
     </application>

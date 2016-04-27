@@ -67,10 +67,7 @@ public class CodeBookFragment extends BaseFragment{
 
     @Override
     public void initData() {
-        Query query = MyApplication.daoMaster.newSession().getCodeBookDao().queryBuilder()
-                .orderAsc(CodeBookDao.Properties.Id)
-                .build();
-        List passwords = query.list();
+        List passwords = MyApplication.daoMaster.newSession().getCodeBookDao().loadAll();
         passwordViewModelArrayList.clear();
         for(int i = 0; i < passwords.size(); i ++){
             PasswordViewModel model = new PasswordViewModel(getContext(),(CodeBook) passwords.get(i));
@@ -102,7 +99,7 @@ public class CodeBookFragment extends BaseFragment{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_add:
-                Intent intent = new Intent(getContext(), EditPassWordActivity.class);
+                Intent intent = new Intent(getActivity(), EditPassWordActivity.class);
                 intent.putExtra(EditPassWordActivity.intent_is_update,false);
                 startActivityForResult(intent, Constant.REQUEST_CODE_EDIT_PASSWORD);
                 break;

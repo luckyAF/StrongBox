@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.luckyaf.strongbox.MyApplication;
 import com.luckyaf.strongbox.R;
+import com.luckyaf.strongbox.activity.base.BaseSwipeBackActivity;
 import com.luckyaf.strongbox.util.DateUtils;
 import com.luckyaf.strongbox.util.ToastUtils;
 

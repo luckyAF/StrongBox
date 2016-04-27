@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.luckyaf.strongbox.control.ContactViewModel" />
+
+        <import type="android.text.InputType" />
+
+        <variable
+            name="contact"
+            type="com.luckyaf.strongbox.control.ContactViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_10"
+            android:background="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="8dp">
+
+            <com.balysv.materialripple.MaterialRippleLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="?attr/colorPrimary"
+                app:mrl_rippleOverlay="true">
+                <LinearLayout
+                    android:onClick="@{contact.onItemClick}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/common_5"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:padding="@dimen/common_10"
+                            android:layout_width="@dimen/common_40"
+                            android:layout_height="@dimen/common_40"
+                            android:background="@drawable/ic_contact_person"/>
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:textColor="@color/gray"
+                            android:paddingLeft="@dimen/common_10"
+                            android:textSize="@dimen/font_body"
+                            android:layout_weight="1"
+                            android:text="@{contact.name}"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/common_5"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:padding="@dimen/common_10"
+                        android:layout_width="@dimen/common_40"
+                        android:layout_height="@dimen/common_40"
+                        android:background="@drawable/ic_contact_phone"/>
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="0dp"
+                        android:textColor="@color/gray"
+                        android:paddingLeft="@dimen/common_10"
+                        android:textSize="@dimen/font_body"
+                        android:layout_weight="1"
+                        android:text="@{contact.phone}"
+                        android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/common_5"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:padding="@dimen/common_10"
+                            android:layout_width="@dimen/common_40"
+                            android:layout_height="@dimen/common_40"
+                            android:background="@drawable/ic_contact_remark"/>
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/font_body"
+                            android:paddingLeft="@dimen/common_10"
+                            android:layout_weight="1"
+                            android:text="@{contact.remark}"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</layout>

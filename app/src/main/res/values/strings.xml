@@ -19,6 +19,18 @@
     <string name="common_update_succeed">更新成功</string>
     <string name="common_create_succeed">创建成功</string>
 
+    <string name="select_image_from_file">从相册选择</string>
+
+    <!--  首次登陆 -->
+    <string name="first_set_password">首次设置密码</string>
+    <string name="number_password">数字密码</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="can_not_be_null">密码不能为空</string>
+    <string name="error_not_same">密码不一致，请重新填写</string>
+    <string name="alert_remember_password">请牢记密码 密码丢失将无法进入程序</string>
+    <string name="remember_again">再记一下</string>
+    <string name="remember_already">记住了</string>
+
     <!-- 菜单 -->
     <string name="menu_index">首页</string>
     <string name="menu_file">加密文件</string>
@@ -80,5 +92,18 @@
     <!-- 日记 -->
     <string name="hint_diary_title">日记标题</string>
     <string name="hint_diary_content">写下此刻的心情</string>
+
+    <!-- 通讯录-->
+    <string name="hint_contact_name">姓名</string>
+    <string name="hint_contact_nickname">昵称</string>
+    <string name="hint_contact_phone">电话</string>
+    <string name="hint_contact_remark">备注</string>
+    <string name="hint_contact_email">电子邮箱</string>
+    <string name="hint_contact_address">地址</string>
+    <string name="hint_contact_company">公司</string>
+    <string name="hint_contact_title">职务</string>
+    <string name="hint_contact_chat">聊天工具</string>
+    <string name="hint_contact_website">网站</string>
+
 
 </resources>

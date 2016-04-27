@@ -66,17 +66,13 @@ public class DiaryFragment extends BaseFragment {
         _btnAdd = (Button)view.findViewById(R.id.btn_add);
         mRecyclerView = (RecyclerView)view.findViewById(R.id.recyclerView_diary);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
-
         mDiaryAdapter = new DiaryAdapter(diaryViewModelArrayList);
         mRecyclerView.setAdapter(mDiaryAdapter);
     }
 
     @Override
     public void initData() {
-        Query query = MyApplication.daoMaster.newSession().getDiaryDao().queryBuilder()
-                .orderAsc(DiaryDao.Properties.Id)
-                .build();
-        List diaries = query.list();
+        List diaries = MyApplication.daoMaster.newSession().getDiaryDao().loadAll();
         diaryViewModelArrayList.clear();
         for(int i = 0; i < diaries.size(); i ++){
             DiaryViewModel model = new DiaryViewModel(getContext(),(Diary) diaries.get(i));

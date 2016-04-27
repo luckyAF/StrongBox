@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.luckyaf.strongbox.MyApplication;
 import com.luckyaf.strongbox.R;
+import com.luckyaf.strongbox.activity.base.BaseSwipeBackActivity;
 import com.luckyaf.strongbox.util.DateUtils;
 import com.luckyaf.strongbox.util.ToastUtils;
 
@@ -107,12 +108,13 @@ public class EditDiaryActivity extends BaseSwipeBackActivity implements TextWatc
         if(isUpdate){
             mDiary.setUpdateTime(DateUtils.currentTime2String());
             MyApplication.daoMaster.newSession().getDiaryDao().update(mDiary);
-            ToastUtils.showMessage(getBaseContext(),getString(R.string.common_save_succeed));
+            ToastUtils.showMessage(getBaseContext(),getString(R.string.common_update_succeed));
         }else{
             mDiary.setCreateTime(DateUtils.currentTime2String());
             mDiary.setUpdateTime(DateUtils.currentTime2String());
             MyApplication.daoMaster.newSession().getDiaryDao().insert(mDiary);
-            ToastUtils.showMessage(getBaseContext(),getString(R.string.common_update_succeed));
+
+            ToastUtils.showMessage(getBaseContext(),getString(R.string.common_save_succeed));
         }
         setResult(RESULT_OK);
         finish();

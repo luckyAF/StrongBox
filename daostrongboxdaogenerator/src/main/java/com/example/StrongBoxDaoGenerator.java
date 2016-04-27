@@ -20,6 +20,8 @@ public class StrongBoxDaoGenerator {
         // 一旦你拥有了一个 Schema 对象后，你便可以使用它添加实体（Entities）了。
         addCodeBook(schema);
         addDiary(schema);
+        addImage(schema);
+        addContact(schema);
        // addDiary(schema);
 
         // 最后我们将使用 DAOGenerator 类的 generateAll() 方法自动生成代码，此处你需要根据自己的情况更改输出目录（既之前创建的 java-gen)。
@@ -65,6 +67,29 @@ public class StrongBoxDaoGenerator {
 
     }
 
+    /**
+    * 添加 通讯录
+    * */
+    public static void addContact(Schema schema){
+        Entity contact = schema.addEntity("MyContact");
+        contact.addIdProperty();
+        contact.addStringProperty("name");//姓名
+        contact.addStringProperty("phone");//电话
+        contact.addStringProperty("email");//邮箱
+        contact.addStringProperty("address");//地址
+        contact.addStringProperty("remark");//备注
+
+    }
+
+    public static void addImage(Schema schema){
+        Entity myImage = schema.addEntity("MyImage");
+        myImage.addIdProperty();
+        myImage.addStringProperty("oldFileName");
+        myImage.addStringProperty("newFilename");
+        myImage.addStringProperty("key");
+        myImage.addStringProperty("describe");
+        myImage.addStringProperty("encodeTime");// 加密时间
+    }
 
     /**
      * 添加 文件表

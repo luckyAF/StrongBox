@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+
+        android:textSize="@dimen/font_display1"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/common_16"
+        android:text="@string/first_set_password"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        style="@style/edit_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number_password" />
+
+        <EditText
+            android:id="@+id/et_passWord"
+            style="@style/EditTextTheme"
+            android:maxLength="8"
+            android:inputType="numberPassword"
+            android:lineSpacingExtra="4dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/edit_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_password" />
+
+        <EditText
+            android:id="@+id/et_confirm"
+            style="@style/EditTextTheme"
+            android:inputType="numberPassword"
+            android:maxLength="8"
+            android:lineSpacingExtra="4dp"/>
+
+    </LinearLayout>
+
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:mrl_rippleOverlay="true"
+        app:mrl_rippleColor="@color/colorAccentPress"
+        >
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/Widget.AppCompat.Button"
+            android:background="@drawable/confirm_button_background"
+            android:text="@string/common_confirm"
+            android:textSize="@dimen/font_button"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+</LinearLayout>

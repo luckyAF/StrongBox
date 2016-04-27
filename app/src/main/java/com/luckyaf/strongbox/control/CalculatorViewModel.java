@@ -1,18 +1,16 @@
 package com.luckyaf.strongbox.control;
 
-import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import com.luckyaf.strongbox.BR;
-import com.luckyaf.strongbox.R;
-import com.luckyaf.strongbox.activity.CalculatorActivity;
+import com.luckyaf.strongbox.activity.login.CalculatorActivity;
 import com.luckyaf.strongbox.activity.MainActivity;
+import com.luckyaf.strongbox.util.AppSettings;
 import com.luckyaf.strongbox.util.VibrateUtils;
 
-import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 
@@ -159,11 +157,23 @@ public class CalculatorViewModel extends BaseObservable {
     public void onEqualsClick(View view){
         VibrateUtils.vShort(mContext);
         calculator();
-        if(input.equals("123456")){
-            Intent intent = new Intent(mContext, MainActivity.class);
-            mContext.startActivity(intent);
-            ((CalculatorActivity)mContext).finish();
+        dealResult();
+        input = "";
+    }
+
+    public void dealResult(){
+        try {
+            int result = Integer.parseInt(input);
+            int loginNumber = AppSettings.getLoginNumber();
+            if (result == loginNumber){
+                Intent intent = new Intent(mContext, MainActivity.class);
+                mContext.startActivity(intent);
+                ((CalculatorActivity)mContext).finish();
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
+
     }
 
     public void onDeleteClick(View view){
@@ -196,6 +206,7 @@ public class CalculatorViewModel extends BaseObservable {
         }
         setResult(result);
     }
+
 
     public void calculator(){
         String text = input;

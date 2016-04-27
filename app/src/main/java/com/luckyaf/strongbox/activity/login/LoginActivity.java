@@ -1,12 +1,12 @@
-package com.luckyaf.strongbox.activity;
+package com.luckyaf.strongbox.activity.login;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.luckyaf.strongbox.R;
-import com.luckyaf.strongbox.fragment.BaseFragment;
+import com.luckyaf.strongbox.activity.base.BaseActivity;
+import com.luckyaf.strongbox.util.AppSettings;
 
 public class LoginActivity extends BaseActivity {
 
@@ -14,7 +14,13 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Intent intent = new Intent(getBaseContext(),CalculatorActivity.class);
+        Intent intent;
+        if(AppSettings.getFirstUse()){
+            intent = new Intent(getBaseContext(),FirstUseActivity.class);
+        }else{
+            intent = new Intent(getBaseContext(),CalculatorActivity.class);
+        }
+
         startActivity(intent);
         finish();
     }

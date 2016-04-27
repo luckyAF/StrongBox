@@ -1,4 +1,4 @@
-package com.luckyaf.strongbox.activity;
+package com.luckyaf.strongbox.activity.base;
 
 import android.annotation.TargetApi;
 import android.content.Intent;

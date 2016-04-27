@@ -3,6 +3,8 @@ package com.luckyaf.strongbox;
 
 import android.database.sqlite.SQLiteDatabase;
 
+import com.luckyaf.strongbox.util.AppSettings;
+
 import me.luckyaf.greendao.DaoMaster;
 
 /**
@@ -18,6 +20,7 @@ public class MyApplication extends android.app.Application {
     public void onCreate() {
         super.onCreate();
         initGreenDao();
+        AppSettings.initSettings(getBaseContext());
     }
 
     public void initGreenDao() {

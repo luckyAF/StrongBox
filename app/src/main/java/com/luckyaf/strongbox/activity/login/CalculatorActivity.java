@@ -1,10 +1,11 @@
-package com.luckyaf.strongbox.activity;
+package com.luckyaf.strongbox.activity.login;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 
 import com.luckyaf.strongbox.R;
+import com.luckyaf.strongbox.activity.base.BaseActivity;
 import com.luckyaf.strongbox.control.CalculatorViewModel;
 import com.luckyaf.strongbox.databinding.ActivityCalculatorBinding;
 

@@ -1,12 +1,17 @@
 package com.luckyaf.strongbox.fragment.program;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.luckyaf.strongbox.R;
+import com.luckyaf.strongbox.activity.AddLockProgramActivity;
+import com.luckyaf.strongbox.activity.EditDiaryActivity;
 import com.luckyaf.strongbox.fragment.BaseFragment;
+import com.luckyaf.strongbox.util.Constant;
 
 /**
  * 类描述：程序
@@ -16,13 +21,17 @@ import com.luckyaf.strongbox.fragment.BaseFragment;
  */
 public class ProgramFragment extends BaseFragment{
     private final String fragmentName = "ProgramFragment(加密程序)";
-
+    private Button _btnAdd;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        return inflater.inflate(R.layout.fragment_program, container, false);
+        View view = inflater.inflate(R.layout.fragment_program, container, false);
+        initWidget(view);
+        initData();
+        initListener();
+        return view;
     }
 
     public static ProgramFragment newInstance(Bundle args) {
@@ -33,7 +42,7 @@ public class ProgramFragment extends BaseFragment{
 
     @Override
     public void initWidget(View view) {
-
+        _btnAdd = (Button)view.findViewById(R.id.btn_add);
     }
 
     @Override
@@ -43,7 +52,7 @@ public class ProgramFragment extends BaseFragment{
 
     @Override
     public void initListener() {
-
+        _btnAdd.setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +62,12 @@ public class ProgramFragment extends BaseFragment{
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()){
+            case R.id.btn_add:
+                Intent intent = new Intent(getContext(), AddLockProgramActivity.class);
+                startActivityForResult(intent, Constant.REQUEST_CODE_EDIT_DIARY);
+                break;
+            default:break;
+        }
     }
 }
