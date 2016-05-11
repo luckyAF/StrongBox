@@ -20,18 +20,22 @@ import javax.crypto.spec.SecretKeySpec;
  * @auhter Created by luckyAF on 16/4/16
  */
 public class AppSettings {
-    public static int LoginNumber;
-    public static Boolean ShowPassword;
-    public static String AESKey;
-    public static Boolean FirstUse;
+    public static int LoginNumber;//登录密码
+    public static Boolean ShowPassword;//是否显示密码
+    public static String AESKey;//加密密码
+    public static Boolean FirstUse;//是否是第一次使用
+    public static Boolean lockProgram;//是否 加锁程序
+    public static Boolean randomBoard;// 是否随机输入面板
 
 
 
     public static void initSettings(Context context){
         LoginNumber = (Integer)SPUtils.get(context,Constant.SP_LOGIN_NUMBER,123456);
-        AESKey = (String)SPUtils.get(context,Constant.SP_AES_KEY,"StrongBoxAESKEY");
+        AESKey = (String)SPUtils.get(context,Constant.SP_AES_KEY,"luckyAFBoxAESKEY");
         ShowPassword = (Boolean)SPUtils.get(context,Constant.SP_SHOW_PASSWORD,false);
         FirstUse = (Boolean)SPUtils.get(context,Constant.SP_FIRST_USE,true);
+        lockProgram = (Boolean)SPUtils.get(context,Constant.SP_LOCK_PROGRAM,false);
+        randomBoard = (Boolean)SPUtils.get(context,Constant.SP_RANDOM_BOARD,false);
     }
 
     public static int getLoginNumber() {
@@ -70,5 +74,22 @@ public class AppSettings {
         SPUtils.put(context,Constant.SP_FIRST_USE,FirstUse);
     }
 
+    public static Boolean getLockProgram() {
+        return lockProgram;
+    }
+
+    public static void setLockProgram(Context context,Boolean lockProgram) {
+        AppSettings.lockProgram = lockProgram;
+        SPUtils.put(context,Constant.SP_LOCK_PROGRAM,lockProgram);
+    }
+
+    public static Boolean getRandomBoard() {
+        return randomBoard;
+    }
+
+    public static void setRandomBoard(Context context,Boolean randomBoard) {
+        AppSettings.randomBoard = randomBoard;
+        SPUtils.put(context,Constant.SP_RANDOM_BOARD,randomBoard);
+    }
 
 }

@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.GET_TASKS"/><!-- 获得正在运行的应用程序权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
 
     <application
         android:allowBackup="true"
@@ -41,6 +42,18 @@
             android:theme="@style/EditTheme"/>
         <activity android:name=".util.image.SelectImageActivity"
             android:theme="@style/EditTheme"/>
+
+        <!-- 开机启动 -->
+        <receiver android:name=".ProtectBC" android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <!-- 后台服务监视应用程序状态并保护 exported="true"表示可以导出服务 -->
+        <service
+            android:name=".service.ProgramProtectService"
+            android:exported="true">
+        </service>
 
     </application>
 

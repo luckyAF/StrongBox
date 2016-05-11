@@ -16,7 +16,7 @@ public class VibrateUtils {
      *
      */
     public static void vShort(Context context) {
-        vSimple(context,100);
+        //vSimple(context,100);
     }
 
     /**
@@ -27,8 +27,8 @@ public class VibrateUtils {
      */
     @SuppressWarnings("static-access")
     public static void vSimple(Context context, int millisecond) {
-        vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
-        vibrator.vibrate(millisecond);
+       // vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
+       // vibrator.vibrate(millisecond);
     }
 
     /**
@@ -40,8 +40,8 @@ public class VibrateUtils {
      */
     @SuppressWarnings("static-access")
     public static void vComplicated(Context context, long[] pattern, int repeate) {
-        vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
-        vibrator.vibrate(pattern, repeate);
+        //vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
+        //vibrator.vibrate(pattern, repeate);
     }
 
     /**

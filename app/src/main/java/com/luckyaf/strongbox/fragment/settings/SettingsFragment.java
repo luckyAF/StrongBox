@@ -1,6 +1,9 @@
 package com.luckyaf.strongbox.fragment.settings;
 
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +19,7 @@ import com.luckyaf.strongbox.fragment.BaseFragment;
  */
 public class SettingsFragment extends BaseFragment{
     private final String fragmentName = "SettingsFragment(设置)";
+    private static BaseSettingsFragment baseSettingsFragment;
 
 
     @Override
@@ -27,31 +31,30 @@ public class SettingsFragment extends BaseFragment{
 
     public static SettingsFragment newInstance(Bundle args) {
         SettingsFragment settingsFragment = new SettingsFragment();
-        settingsFragment.setArguments(args);
+        baseSettingsFragment = new BaseSettingsFragment();
+
         return settingsFragment;
     }
 
-    @Override
+
+
+
     public void initWidget(View view) {
 
     }
 
-    @Override
     public void initData() {
 
     }
 
-    @Override
     public void initListener() {
 
     }
 
-    @Override
     public String getFragmentName() {
         return fragmentName;
     }
 
-    @Override
     public void onClick(View v) {
 
     }

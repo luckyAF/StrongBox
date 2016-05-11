@@ -15,7 +15,7 @@ import android.widget.EditText;
 
 import com.luckyaf.strongbox.MyApplication;
 import com.luckyaf.strongbox.R;
-import com.luckyaf.strongbox.activity.base.BaseSwipeBackActivity;
+import com.luckyaf.strongbox.activity.base.BaseActivity;
 import com.luckyaf.strongbox.util.ToastUtils;
 
 import de.greenrobot.dao.query.Query;
@@ -27,7 +27,7 @@ import me.luckyaf.greendao.MyContactDao;
  *
  * @auhter Created by luckyAF on 16/4/27
  */
-public class EditContactActivity extends BaseSwipeBackActivity implements TextWatcher {
+public class EditContactActivity extends BaseActivity implements TextWatcher {
 
     private Toolbar mToolbar;
     private Button deleteButton;
@@ -114,14 +114,15 @@ public class EditContactActivity extends BaseSwipeBackActivity implements TextWa
 
     }
 
-    @Override
-    protected int getContentView() {
-        return R.layout.activity_edit_contact;
-    }
 
     @Override
     protected void initToolbar() {
 
+    }
+
+    @Override
+    protected boolean isApplyTranslucency() {
+        return false;
     }
 
     @Override

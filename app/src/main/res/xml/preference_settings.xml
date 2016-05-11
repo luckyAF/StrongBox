@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:layout="@layout/preference_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="test">
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="人性化自由选择">
+
+        <CheckBoxPreference
+            android:layout="@layout/preference_item"
+            android:title="贝壳通知栏单词处于最高位置"
+            android:key="@string/notify_priority"
+            android:summaryOn="当前为最高位置"
+            android:summaryOff="当前为最低位置(默认)"
+            android:defaultValue="false"/>
+        <Preference
+            android:layout="@layout/preference_item"
+            android:title="在通知栏显示音标"
+            android:summary="当前为不显示"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="感谢有你">
+        <Preference
+            android:layout="@layout/preference_item"
+            android:summary="我的博客：http://drakeet.me"
+            android:title="作者：drakeet"/>
+    </PreferenceCategory>
+</PreferenceScreen>

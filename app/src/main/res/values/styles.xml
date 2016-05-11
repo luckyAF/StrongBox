@@ -99,4 +99,10 @@
 
     </style>
 
+    <style name="PasswordButtonText">
+        <item name="android:textSize">@dimen/font_headline</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
 </resources>

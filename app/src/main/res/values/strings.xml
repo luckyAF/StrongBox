@@ -105,5 +105,8 @@
     <string name="hint_contact_chat">聊天工具</string>
     <string name="hint_contact_website">网站</string>
 
+    <!--  程序锁 -->
+    <string name="program_input_password">请输入密码</string>
+
 
 </resources>

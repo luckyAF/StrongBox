@@ -1,5 +1,6 @@
 package com.luckyaf.strongbox.activity;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -133,52 +134,63 @@ public class MainActivity extends BaseActivity
         // Handle navigation view item clicks here.
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        String title = getString(R.string.app_name);;
+        String title = getString(R.string.app_name);
+        Boolean isChanged = false;
         Bundle bundle = new Bundle();
         switch (item.getItemId()){
             case R.id.nav_index:
                 _currentFragment = IndexFragment.newInstance(bundle);
                 title = getString(R.string.menu_index);
+                isChanged = true;
                 break;
             case R.id.nav_file:
                 _currentFragment = FileMainFragment.newInstance(bundle);
                 title = getString(R.string.menu_file);
+                isChanged = true;
                 break;
             case R.id.nav_program:
                 _currentFragment = ProgramFragment.newInstance(bundle);
                 title = getString(R.string.menu_program);
+                isChanged = true;
                 break;
             case R.id.nav_contact:
                 _currentFragment = ContactFragment.newInstance(bundle);
                 title = getString(R.string.menu_contact);
+                isChanged = true;
                 break;
             case R.id.nav_diary:
                 _currentFragment = DiaryFragment.newInstance(bundle);
                 title = getString(R.string.menu_diary);
+                isChanged = true;
                 break;
             case R.id.nav_code_book:
                 _currentFragment = CodeBookFragment.newInstance(bundle);
                 title = getString(R.string.menu_code_books);
+                isChanged = true;
                 break;
             case R.id.nav_settings:
-                _currentFragment = SettingsFragment.newInstance(bundle);
-                title = getString(R.string.menu_settings);
+                //_currentFragment = SettingsFragment.newInstance(bundle);
+                //title = getString(R.string.menu_settings);
+                Intent intent = new Intent(this,SettingsActivity.class);
+                startActivity(intent);
                 break;
             default:
                 _currentFragment = _lastFragment;
                 break;
         }
 
-
-        if(!_currentFragment.isAdded()){
-            fragmentTransaction.hide(_lastFragment).add(R.id.frame_main,_currentFragment).commit();
-        }else{
-            fragmentTransaction.hide(_lastFragment).show(_currentFragment).commit();
+        if(isChanged){
+            if(!_currentFragment.isAdded()){
+                fragmentTransaction.hide(_lastFragment).add(R.id.frame_main,_currentFragment).commit();
+            }else{
+                fragmentTransaction.hide(_lastFragment).show(_currentFragment).commit();
+            }
+            _lastFragment = _currentFragment;
+            _mToolbar.setTitle(title);
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
         }
-        _lastFragment = _currentFragment;
-        _mToolbar.setTitle(title);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 

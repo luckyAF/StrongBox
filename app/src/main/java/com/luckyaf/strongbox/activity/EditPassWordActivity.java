@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import com.luckyaf.strongbox.MyApplication;
 import com.luckyaf.strongbox.R;
-import com.luckyaf.strongbox.activity.base.BaseSwipeBackActivity;
+import com.luckyaf.strongbox.activity.base.BaseActivity;
 import com.luckyaf.strongbox.util.DateUtils;
 import com.luckyaf.strongbox.util.ToastUtils;
 
@@ -33,7 +33,7 @@ import me.luckyaf.greendao.CodeBookDao;
  *
  * @auhter Created by luckyAF on 16/3/30
  */
-public class EditPassWordActivity extends BaseSwipeBackActivity implements TextWatcher{
+public class EditPassWordActivity extends BaseActivity implements TextWatcher{
     private Toolbar mToolbar;
     private Button deleteButton;
     private ImageButton changeButton;
@@ -60,15 +60,15 @@ public class EditPassWordActivity extends BaseSwipeBackActivity implements TextW
         initListener();
     }
 
-    @Override
-    protected int getContentView() {
-        return R.layout.activity_edit_password;
-    }
-
 
     @Override
     protected void initToolbar() {
 
+    }
+
+    @Override
+    protected boolean isApplyTranslucency() {
+        return false;
     }
 
     public void initWidget() {

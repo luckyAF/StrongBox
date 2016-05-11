@@ -158,7 +158,6 @@ public class CalculatorViewModel extends BaseObservable {
         VibrateUtils.vShort(mContext);
         calculator();
         dealResult();
-        input = "";
     }
 
     public void dealResult(){
@@ -212,25 +211,22 @@ public class CalculatorViewModel extends BaseObservable {
         String text = input;
         if (text.equals(result)) {
             //clearWithHistory(false); //clear after an Enter on result
+            input = result;
+            result = "";
+            setInput(input);
+            setResult(result);
         } else {
            // mHistory.enter(text);
             try {
                 result = evaluate(text);
             } catch (SyntaxException e) {
                 isError = true;
-
                 result = mErrorString;
-            }
-            if (text.equals(result)) {
-                //no need to show result, it is exactly what the user entered
-               // clearWithHistory(true);
-            } else {
-                //setText(mResult);
-                //mEqualButton.setText(mEnterString);
             }
             if(isError){
                 setError(isError);
                 setResult(result);
+                input="";
             }else{
                 input = result;
                 result = "";
@@ -239,6 +235,7 @@ public class CalculatorViewModel extends BaseObservable {
             }
 
         }
+        //input = "";
 
     }
 

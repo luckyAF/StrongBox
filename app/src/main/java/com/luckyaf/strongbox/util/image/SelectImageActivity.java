@@ -33,7 +33,7 @@ import android.widget.Toast;
 
 
 import com.luckyaf.strongbox.R;
-import com.luckyaf.strongbox.activity.base.BaseSwipeBackActivity;
+import com.luckyaf.strongbox.activity.base.BaseActivity;
 import com.luckyaf.strongbox.util.AnimationUtils;
 
 import java.io.File;
@@ -62,7 +62,7 @@ import java.util.LinkedHashMap;
  *
  * @auhter Created by luckyAF on 16/4/23
  */
-public class SelectImageActivity extends BaseSwipeBackActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class SelectImageActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     /**
      * 最大选择数
@@ -162,26 +162,21 @@ public class SelectImageActivity extends BaseSwipeBackActivity implements Loader
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_select_image);
-
-
         initActionbar();
-
         init();
-
-
         initDirectory();
 //
 
     }
 
     @Override
-    protected int getContentView() {
-        return R.layout.activity_select_image;
+    protected void initToolbar() {
+
     }
 
     @Override
-    protected void initToolbar() {
-
+    protected boolean isApplyTranslucency() {
+        return false;
     }
 
     private void init() {

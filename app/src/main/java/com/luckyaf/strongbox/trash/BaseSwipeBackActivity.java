@@ -1,4 +1,5 @@
-package com.luckyaf.strongbox.activity.base;
+/*
+package com.luckyaf.strongbox.trash;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -18,11 +19,13 @@ import me.imid.swipebacklayout.lib.Utils;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivityBase;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
 
+*/
 /**
  * 类描述：
  *
  * @auhter Created by luckyAF on 16/4/9
- */
+ *//*
+
 public abstract class BaseSwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase ,OnClickListener{
     private SwipeBackActivityHelper mHelper;
 
@@ -76,9 +79,11 @@ public abstract class BaseSwipeBackActivity extends AppCompatActivity implements
         }
     }
 
-    /**
+    */
+/**
      * api大于19的时候，实现沉浸式状态栏
-     */
+     *//*
+
     @TargetApi(19)
     protected void initWindow() {
 
@@ -105,3 +110,4 @@ public abstract class BaseSwipeBackActivity extends AppCompatActivity implements
 
     protected abstract void initToolbar();
 }
+*/

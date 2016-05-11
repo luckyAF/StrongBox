@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.luckyaf.strongbox.MyApplication;
 import com.luckyaf.strongbox.R;
-import com.luckyaf.strongbox.activity.base.BaseSwipeBackActivity;
+import com.luckyaf.strongbox.activity.base.BaseActivity;
 import com.luckyaf.strongbox.util.DateUtils;
 import com.luckyaf.strongbox.util.ToastUtils;
 
@@ -28,7 +28,7 @@ import me.luckyaf.greendao.Diary;
  *
  * @auhter Created by luckyAF on 16/4/10
  */
-public class EditDiaryActivity extends BaseSwipeBackActivity implements TextWatcher {
+public class EditDiaryActivity extends BaseActivity implements TextWatcher {
     private Toolbar mToolbar;
     private MenuItem itemDone;
     private MenuItem itemDelete;
@@ -44,7 +44,7 @@ public class EditDiaryActivity extends BaseSwipeBackActivity implements TextWatc
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getContentView());
+        setContentView(R.layout.activity_edit_diary);
         initWidget();
         initData();
         initListener();
@@ -55,6 +55,11 @@ public class EditDiaryActivity extends BaseSwipeBackActivity implements TextWatc
     @Override
     protected void initToolbar() {
 
+    }
+
+    @Override
+    protected boolean isApplyTranslucency() {
+        return false;
     }
 
     public void initWidget(){
@@ -125,11 +130,6 @@ public class EditDiaryActivity extends BaseSwipeBackActivity implements TextWatc
 
     }
 
-
-    @Override
-    protected int getContentView() {
-        return R.layout.activity_edit_diary;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

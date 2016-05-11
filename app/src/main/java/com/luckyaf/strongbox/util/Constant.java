@@ -18,6 +18,8 @@ public class Constant {
     public static String SP_LOGIN_NUMBER = "LOGIN_NUMBER";
     public static String SP_AES_KEY = "AES_KEY";
     public static String SP_SHOW_PASSWORD = "SHOW_PASSWORD";
+    public static String SP_LOCK_PROGRAM = "LOCK_PROGRAM";
+    public static String SP_RANDOM_BOARD = "RANDOM_BOARD";
 
 
 }

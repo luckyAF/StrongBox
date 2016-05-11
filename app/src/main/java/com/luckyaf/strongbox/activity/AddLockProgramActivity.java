@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.luckyaf.strongbox.R;
-import com.luckyaf.strongbox.activity.base.BaseSwipeBackActivity;
+import com.luckyaf.strongbox.activity.base.BaseActivity;
 import com.luckyaf.strongbox.adapter.ProgramAdapter;
 import com.luckyaf.strongbox.bean.MyProgram;
 
@@ -21,7 +21,7 @@ import java.util.ArrayList;
  *
  * @auhter Created by luckyAF on 16/4/27
  */
-public class AddLockProgramActivity extends BaseSwipeBackActivity{
+public class AddLockProgramActivity extends BaseActivity{
     private Toolbar mToolbar;
     private MenuItem menuItem;
     private ArrayList<ResolveInfo> mApps = new ArrayList<>();
@@ -65,14 +65,15 @@ public class AddLockProgramActivity extends BaseSwipeBackActivity{
 
     }
 
-    @Override
-    protected int getContentView() {
-        return R.layout.activity_add_lock_program;
-    }
 
     @Override
     protected void initToolbar() {
 
+    }
+
+    @Override
+    protected boolean isApplyTranslucency() {
+        return false;
     }
 
     @Override
