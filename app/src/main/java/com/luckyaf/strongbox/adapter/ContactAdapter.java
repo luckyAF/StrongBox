@@ -17,7 +17,7 @@ import java.util.ArrayList;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/27
+ * @author Created by luckyAF on 16/4/27
  */
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
 

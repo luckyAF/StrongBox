@@ -6,7 +6,7 @@ import android.support.v7.app.AlertDialog;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/9
+ * @author Created by luckyAF on 16/4/9
  */
 public class MyAlertDialog {
     public static void showDialog(String msg, String positiveMsg, Context context){

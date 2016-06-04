@@ -16,7 +16,7 @@ import java.util.ArrayList;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/23
+ * @author Created by luckyAF on 16/4/23
  */
 public class ImageFolderAdapter extends BaseAdapter {
 

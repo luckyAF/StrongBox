@@ -11,7 +11,7 @@ import com.luckyaf.strongbox.fragment.BaseFragment;
 /**
  * 类描述：首页
  *
- * @auther XCF
+ * @author XCF
  */
 public class IndexFragment extends BaseFragment {
     private final String fragmentName = "IndexFragment(首页)";

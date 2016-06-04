@@ -15,7 +15,7 @@ import javax.crypto.spec.SecretKeySpec;
 /**
  * 类描述：加密
  *
- * @auhter Created by luckyAF on 16/4/25
+ * @author Created by luckyAF on 16/4/25
  */
 public  class AESUtils {
 

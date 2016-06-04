@@ -11,7 +11,7 @@ import com.luckyaf.strongbox.fragment.BaseFragment;
 /**
  * 类描述：文档
  *
- * @auhter Created by luckyAF on 16/3/19
+ * @author Created by luckyAF on 16/3/19
  */
 public class DocumentFragment extends BaseFragment{
 

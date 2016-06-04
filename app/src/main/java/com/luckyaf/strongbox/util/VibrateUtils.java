@@ -6,7 +6,7 @@ import android.os.Vibrator;
 /**
  * 类描述：振动
  *
- * @auhter Created by luckyAF on 16/4/1
+ * @author Created by luckyAF on 16/4/1
  */
 public class VibrateUtils {
     private static Vibrator vibrator;

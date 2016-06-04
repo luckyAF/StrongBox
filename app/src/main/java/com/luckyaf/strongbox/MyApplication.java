@@ -10,7 +10,7 @@ import me.luckyaf.greendao.DaoMaster;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/7
+ * @author Created by luckyAF on 16/4/7
  */
 public class MyApplication extends android.app.Application {
     public static DaoMaster daoMaster;

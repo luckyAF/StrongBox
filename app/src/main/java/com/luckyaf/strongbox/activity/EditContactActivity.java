@@ -25,7 +25,7 @@ import me.luckyaf.greendao.MyContactDao;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/27
+ * @author Created by luckyAF on 16/4/27
  */
 public class EditContactActivity extends BaseActivity implements TextWatcher {
 
@@ -43,6 +43,7 @@ public class EditContactActivity extends BaseActivity implements TextWatcher {
     public static String intent_is_update = "INTENT_IS_UPDATE";
     public static String intent_contact_id = "INTENT_CONTACT_ID";
     private Boolean isUpdate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

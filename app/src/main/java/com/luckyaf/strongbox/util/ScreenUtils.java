@@ -12,7 +12,7 @@ import android.view.WindowManager;
 /**
  * 类描述：获得屏幕相关的类
  *
- * @auhter Created by luckyAF on 16/4/1
+ * @author Created by luckyAF on 16/4/1
  */
 public class ScreenUtils {
     /**

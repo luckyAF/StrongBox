@@ -60,7 +60,7 @@ import java.util.LinkedHashMap;
  * <p>ArrayList<ImageInformation> ImageInformations = (ArrayList<ImageInformation>) data.getSerializableExtra(SelectImageActivity.EXTRA_RESULT_PHOTO_LIST);//多个图片的路径集合</p>
  *
  *
- * @auhter Created by luckyAF on 16/4/23
+ * @author Created by luckyAF on 16/4/23
  */
 public class SelectImageActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 

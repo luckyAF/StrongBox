@@ -3,7 +3,7 @@ package com.luckyaf.strongbox.util.image;
 /**
  * 类描述：图片文件夹 包含图片数量和第一张图片
  *
- * @auhter Created by luckyAF on 16/4/23
+ * @author Created by luckyAF on 16/4/23
  */
 public class ImageFolder {
     private ImageInformation imageInformation;

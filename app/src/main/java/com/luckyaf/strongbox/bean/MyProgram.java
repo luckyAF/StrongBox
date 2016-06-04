@@ -5,7 +5,7 @@ import android.content.pm.ResolveInfo;
 /**
  * 类描述：程序类  用于存储包含该程序是否被锁信息
  *
- * @auhter Created by luckyAF on 16/4/28
+ * @author Created by luckyAF on 16/4/28
  */
 public class MyProgram {
     public Boolean isLock;

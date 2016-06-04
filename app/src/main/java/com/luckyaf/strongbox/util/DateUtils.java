@@ -9,7 +9,7 @@ import java.util.Locale;
 /**
  * 类描述： 时间工具
  *
- * @auhter Created by luckyAF on 16/4/1
+ * @author Created by luckyAF on 16/4/1
  */
 public class DateUtils {
     public static String[] WEEK = new String[]{"天", "一", "二", "三", "四", "五", "六"};

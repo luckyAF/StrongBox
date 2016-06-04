@@ -30,7 +30,7 @@
             android:gravity="center"
             android:inputType="numberPassword"
             android:padding="@dimen/common_10"
-            android:textSize="@dimen/font_headline" />
+            android:textSize="@dimen/font_display2" />
 
     </LinearLayout>
 

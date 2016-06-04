@@ -21,7 +21,7 @@ import org.javia.arity.Util;
 /**
  * 类描述：控制计算器显示
  *
- * @auhter Created by luckyAF on 16/3/22
+ * @author Created by luckyAF on 16/3/22
  */
 public class CalculatorViewModel extends BaseObservable {
     private Symbols mSymbols = new Symbols();
@@ -248,9 +248,8 @@ public class CalculatorViewModel extends BaseObservable {
             input = input.substring(0, size - 1);
             --size;
         }
-
         String result = Util.doubleToString(mSymbols.eval(input), mLineLength, ROUND_DIGITS);
-        if (result.equals(NAN)) { // treat NaN as Error
+        if (result.equals(NAN)) {
             isError = true;
             return mErrorString;
         }

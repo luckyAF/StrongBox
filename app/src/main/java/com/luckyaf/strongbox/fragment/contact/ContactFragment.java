@@ -33,7 +33,7 @@ import me.luckyaf.greendao.MyContactDao;
 /**
  * 类描述：通讯
  *
- * @auhter. luckyAF
+ * @author luckyAF
  * 16/3/18
  */
 public class ContactFragment extends BaseFragment{

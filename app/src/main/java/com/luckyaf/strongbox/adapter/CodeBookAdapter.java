@@ -19,7 +19,7 @@ import me.luckyaf.greendao.CodeBook;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/6
+ * @author Created by luckyAF on 16/4/6
  */
 public class CodeBookAdapter extends RecyclerView.Adapter<CodeBookAdapter.ViewHolder> {
 

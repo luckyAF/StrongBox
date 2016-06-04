@@ -7,11 +7,16 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.GET_TASKS"/><!-- 获得正在运行的应用程序权限 -->
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.REAL_GET_TASKS"/>
+    <uses-permission xmlns:tools="http://schemas.android.com/tools"
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:allowBackup="true"
         android:name=".MyApplication"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_local_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -29,6 +34,8 @@
             android:theme="@style/CommonAppTheme" />
         <activity android:name=".activity.login.FirstUseActivity"
             android:theme="@style/AppTheme" />
+        <activity android:name=".activity.SettingsActivity"
+            android:theme="@style/EditTheme" />
         <activity
             android:name=".activity.login.CalculatorActivity"
             android:theme="@style/CommonAppTheme" />
@@ -42,9 +49,11 @@
             android:theme="@style/EditTheme"/>
         <activity android:name=".util.image.SelectImageActivity"
             android:theme="@style/EditTheme"/>
+        <activity android:name=".activity.AppLockActivity"
+            android:theme="@style/CommonAppTheme"/>
 
         <!-- 开机启动 -->
-        <receiver android:name=".ProtectBC" android:enabled="true" >
+        <receiver android:name=".receiver.ProtectStartUp" android:enabled="true" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>

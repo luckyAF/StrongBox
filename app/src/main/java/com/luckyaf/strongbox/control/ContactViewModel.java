@@ -1,15 +1,19 @@
 package com.luckyaf.strongbox.control;
 
 import android.content.Context;
+import android.content.Intent;
 import android.databinding.BaseObservable;
 import android.view.View;
+
+import com.luckyaf.strongbox.activity.EditContactActivity;
+import com.luckyaf.strongbox.activity.EditDiaryActivity;
 
 import me.luckyaf.greendao.MyContact;
 
 /**
  * 类描述：控制通讯录的显示
  *
- * @auhter Created by luckyAF on 16/4/27
+ * @author Created by luckyAF on 16/4/27
  */
 public class ContactViewModel extends BaseObservable {
     public Context mContext;
@@ -31,7 +35,10 @@ public class ContactViewModel extends BaseObservable {
     }
 
     public void onItemClick(View view){
-
+        Intent intent = new Intent(mContext, EditContactActivity.class);
+        intent.putExtra(EditContactActivity.intent_is_update,true);
+        intent.putExtra(EditContactActivity.intent_contact_id,getId());
+        mContext.startActivity(intent);
     }
 
     public String getId() {

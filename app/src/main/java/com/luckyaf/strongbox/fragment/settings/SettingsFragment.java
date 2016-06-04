@@ -14,7 +14,7 @@ import com.luckyaf.strongbox.fragment.BaseFragment;
 /**
  * 类描述：设置
  *
- * @auhter. luckyAF
+ * @author. luckyAF
  * 16/3/18
  */
 public class SettingsFragment extends BaseFragment{

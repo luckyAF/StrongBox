@@ -15,6 +15,7 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Intent intent;
+        AppSettings.initSettings(this);
         if(AppSettings.getFirstUse()){
             intent = new Intent(getBaseContext(),FirstUseActivity.class);
         }else{

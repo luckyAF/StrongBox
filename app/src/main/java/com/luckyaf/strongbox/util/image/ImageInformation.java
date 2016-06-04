@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 类描述：记录图片详情，activity交流
  *
- * @auhter Created by luckyAF on 16/4/23
+ * @author Created by luckyAF on 16/4/23
  */
 public class ImageInformation implements Serializable {
     public String path;//路径

@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/3/30
+ * @author Created by luckyAF on 16/3/30
  */
 public class SPUtils {
     /**

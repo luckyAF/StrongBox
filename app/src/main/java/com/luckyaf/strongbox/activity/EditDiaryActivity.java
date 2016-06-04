@@ -1,23 +1,31 @@
 package com.luckyaf.strongbox.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.luckyaf.strongbox.MyApplication;
 import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.activity.base.BaseActivity;
+import com.luckyaf.strongbox.util.AppSettings;
 import com.luckyaf.strongbox.util.DateUtils;
 import com.luckyaf.strongbox.util.ToastUtils;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import de.greenrobot.dao.query.Query;
 import me.luckyaf.greendao.CodeBookDao;
@@ -26,7 +34,7 @@ import me.luckyaf.greendao.Diary;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/10
+ * @author Created by luckyAF on 16/4/10
  */
 public class EditDiaryActivity extends BaseActivity implements TextWatcher {
     private Toolbar mToolbar;
@@ -203,4 +211,23 @@ public class EditDiaryActivity extends BaseActivity implements TextWatcher {
             itemDone.setVisible(true);
         }
     }
+
+
+        @Override
+        protected void onResume() {
+            super.onResume();
+
+        }
+
+        @Override
+        protected void onPause() {
+            super.onPause();
+            onDestroy();
+        }
+
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+        }
 }
+

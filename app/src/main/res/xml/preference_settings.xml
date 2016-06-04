@@ -4,28 +4,48 @@
     android:title="test">
     <PreferenceCategory
         android:layout="@layout/preference_category_widget"
-        android:title="人性化自由选择">
+        android:title="@string/base_settings">
 
         <CheckBoxPreference
             android:layout="@layout/preference_item"
-            android:title="贝壳通知栏单词处于最高位置"
-            android:key="@string/notify_priority"
-            android:summaryOn="当前为最高位置"
-            android:summaryOff="当前为最低位置(默认)"
+            android:title="@string/open_program_lock"
+            android:key="@string/key_program_lock"
+            android:summaryOn="@string/program_lock_on"
+            android:summaryOff="@string/program_lock_off"
             android:defaultValue="false"/>
         <Preference
             android:layout="@layout/preference_item"
-            android:title="在通知栏显示音标"
-            android:summary="当前为不显示"
+            android:key="@string/key_lock_permission"
+            android:title="@string/set_lock_permission"
+            />
+        <CheckBoxPreference
+            android:layout="@layout/preference_item"
+            android:title="@string/code_book_settings"
+            android:key="@string/key_code_book"
+            android:summaryOn="@string/code_book_visible"
+            android:summaryOff="@string/code_book_invisible"
             android:defaultValue="false"/>
+
+        <Preference
+            android:layout="@layout/preference_item"
+            android:key="@string/key_login_code"
+            android:title="@string/change_login_code"
+            />
+
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:layout="@layout/preference_category_widget"
-        android:title="感谢有你">
+        android:title="@string/thank_for_using">
         <Preference
             android:layout="@layout/preference_item"
-            android:summary="我的博客：http://drakeet.me"
-            android:title="作者：drakeet"/>
+            android:summary="我的邮箱：944235771@qq.com"
+            android:title="作者：luckyAF"/>
+        <Preference
+            android:layout="@layout/preference_item"
+            android:title="当前版本"
+            android:summary="0.0.0"
+            />
     </PreferenceCategory>
 </PreferenceScreen>

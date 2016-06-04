@@ -13,7 +13,7 @@ import me.luckyaf.greendao.Diary;
 /**
  * 类描述：控制日记显示
  *
- * @auhter Created by luckyAF on 16/4/10
+ * @author Created by luckyAF on 16/4/10
  */
 public class DiaryViewModel  extends BaseObservable {
     private Context mContext;

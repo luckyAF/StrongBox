@@ -22,7 +22,7 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 /**
  * 类描述：activity基类
  *
- * @auhter Created by luckyAF on 16/3/30
+ * @author Created by luckyAF on 16/3/30
  */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
     private SystemBarTintManager tintManager;

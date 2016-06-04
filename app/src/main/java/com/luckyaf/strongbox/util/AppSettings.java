@@ -17,7 +17,7 @@ import javax.crypto.spec.SecretKeySpec;
 /**
  * 类描述：应用的设置
  *
- * @auhter Created by luckyAF on 16/4/16
+ * @author Created by luckyAF on 16/4/16
  */
 public class AppSettings {
     public static int LoginNumber;//登录密码

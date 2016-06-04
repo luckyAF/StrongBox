@@ -3,8 +3,18 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_open_lock"
+        android:padding="@dimen/common_10"
+        android:text="@string/tip_lock_open"
+        android:textColor="@color/white"
+        android:background="@color/gray"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="@dimen/common_5"
         android:id="@+id/recyclerView_program"
         android:layout_weight="1"
         android:layout_width="match_parent"

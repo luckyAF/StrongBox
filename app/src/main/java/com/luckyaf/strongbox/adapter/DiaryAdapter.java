@@ -16,7 +16,7 @@ import java.util.ArrayList;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/10
+ * @author Created by luckyAF on 16/4/10
  */
 public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> {
 

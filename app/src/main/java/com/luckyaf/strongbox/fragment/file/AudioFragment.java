@@ -11,7 +11,7 @@ import com.luckyaf.strongbox.fragment.BaseFragment;
 /**
  * 类描述：音频
  *
- * @auhter Created by luckyAF on 16/3/19
+ * @author Created by luckyAF on 16/3/19
  */
 public class AudioFragment extends BaseFragment{
 

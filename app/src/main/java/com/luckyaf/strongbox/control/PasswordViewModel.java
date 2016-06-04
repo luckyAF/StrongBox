@@ -15,7 +15,7 @@ import me.luckyaf.greendao.CodeBook;
 /**
  * 类描述：控制密码显示
  *
- * @auhter Created by luckyAF on 16/3/31
+ * @author Created by luckyAF on 16/3/31
  */
 public class PasswordViewModel extends BaseObservable {
     private String id;

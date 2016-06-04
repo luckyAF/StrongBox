@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 类描述：tabLayout适配器
  *
- * @auhter Created by luckyAF on 16/3/19
+ * @author Created by luckyAF on 16/3/19
  */
 public class TabLayoutAdapter extends FragmentPagerAdapter{
     private List<Fragment> _listFragment;

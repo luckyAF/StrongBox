@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 类描述：文件
  *
- * @auther XCF
+ * @author XCF
  */
 public  class FileMainFragment extends BaseFragment {
 

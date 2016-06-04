@@ -31,7 +31,7 @@ import me.luckyaf.greendao.CodeBookDao;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/3/30
+ * @author Created by luckyAF on 16/3/30
  */
 public class EditPassWordActivity extends BaseActivity implements TextWatcher{
     private Toolbar mToolbar;

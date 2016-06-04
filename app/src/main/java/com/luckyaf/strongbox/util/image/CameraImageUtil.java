@@ -18,7 +18,7 @@ import java.util.Date;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/24
+ * @author Created by luckyAF on 16/4/24
  */
 public class CameraImageUtil {
     public static Uri getOutputMediaFileUri() {

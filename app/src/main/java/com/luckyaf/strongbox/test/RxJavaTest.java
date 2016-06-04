@@ -11,7 +11,7 @@ import rx.schedulers.Schedulers;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/25
+ * @author Created by luckyAF on 16/4/25
  */
 public class RxJavaTest {
     public static void main(String args[]) {

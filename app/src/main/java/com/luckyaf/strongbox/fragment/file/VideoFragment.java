@@ -11,7 +11,7 @@ import com.luckyaf.strongbox.fragment.BaseFragment;
 /**
  * 类描述：视频
  *
- * @auhter Created by luckyAF on 16/3/19
+ * @author Created by luckyAF on 16/3/19
  */
 public class VideoFragment extends BaseFragment{
     private final String fragmentName = "ImageFragment(加密视频)";

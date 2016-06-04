@@ -33,7 +33,7 @@ import me.luckyaf.greendao.DiaryDao;
 /**
  * 类描述：日记
  *
- * @auhter. luckyAF
+ * @author luckyAF
  * 16/3/18
  */
 public class DiaryFragment extends BaseFragment {

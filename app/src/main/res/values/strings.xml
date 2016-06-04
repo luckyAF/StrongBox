@@ -107,6 +107,31 @@
 
     <!--  程序锁 -->
     <string name="program_input_password">请输入密码</string>
+    <string name="program_lock_program">加密程序</string>
+    <string name="tip_lock_open">程序锁未开启，可在设置中开启</string>
+    <string name="message_confirm_unlock">确认解锁该应用吗？</string>
+
+
+    <!--  设置  -->
+    <string name="key_program_lock">key_program_lock</string>
+    <string name="key_code_book">key_code_book</string>
+    <string name="key_login_code">key_login_code</string>
+    <string name="key_lock_permission">key_lock_permission</string>
+    <string name="base_settings">基本设置</string>
+    <string name="open_program_lock">开启应用锁</string>
+    <string name="program_lock_on">应用锁当前状态（开启）</string>
+    <string name="program_lock_off">应用锁当前状态（关闭）</string>
+    <string name="code_book_settings">设置密码本首页显示</string>
+    <string name="code_book_visible">密码本首页密码显示（可见）</string>
+    <string name="code_book_invisible">密码本首页密码显示（加密）</string>
+    <string name="change_login_code">修改登录密码</string>
+    <string name="set_lock_permission">打开应用锁权限</string>
+    <string name="thank_for_using">谢谢使用</string>
+
+    <string name="hint_old_password">旧密码</string>
+    <string name="hint_new_password">新密码</string>
+    <string name="hint_confirm_password">再次填写确认</string>
+
 
 
 </resources>

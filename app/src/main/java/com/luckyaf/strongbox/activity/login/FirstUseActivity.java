@@ -18,7 +18,7 @@ import com.luckyaf.strongbox.util.ToastUtils;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/17
+ * @author Created by luckyAF on 16/4/17
  */
 public class FirstUseActivity extends BaseActivity{
     private EditText etPassword;
@@ -57,7 +57,7 @@ public class FirstUseActivity extends BaseActivity{
     public void dealConfirm(){
         String a = etPassword.getText().toString().trim();
         String b = etConfirm.getText().toString().trim();
-        if(a.length() == 0 && b.length() == 4){
+        if(a.length() == 0 && b.length() == 0){
             ToastUtils.showMessage(this,getString(R.string.can_not_be_null));
             return;
         }

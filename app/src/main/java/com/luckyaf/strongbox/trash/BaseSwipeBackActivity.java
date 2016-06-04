@@ -23,7 +23,7 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
 /**
  * 类描述：
  *
- * @auhter Created by luckyAF on 16/4/9
+ * @author Created by luckyAF on 16/4/9
  *//*
 
 public abstract class BaseSwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase ,OnClickListener{
