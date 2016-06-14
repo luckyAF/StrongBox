@@ -1,40 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:layout_height="match_parent">
-    <include layout="@layout/toolbar_edit"/>
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_edit" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_program"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
-        </android.support.v7.widget.RecyclerView>
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v7.widget.RecyclerView>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/btn_add"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="@string/common_add"
-            android:textColor="@color/white"
-            android:background="@color/colorPrimary"
-            android:padding="0dp"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_cancel"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:padding="0dp"
-            android:text="@string/common_cancel"
-            android:textColor="@color/white"
-            android:background="@color/colorPrimary"
-            android:layout_height="wrap_content" />
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
 
+        <com.balysv.materialripple.MaterialRippleLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            app:mrl_rippleColor="@color/colorPrimaryDark"
+            app:mrl_rippleOverlay="true">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_button_background"
+                android:text="@string/common_cancel"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_button" />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:mrl_rippleOverlay="true"
+            app:mrl_rippleColor="@color/colorPrimaryDark"
+            >
+            <Button
+                android:id="@+id/btn_add"
+                style="@style/Widget.AppCompat.Button"
+                android:background="@drawable/common_button_background"
+                android:text="@string/common_add"
+                android:textSize="@dimen/font_button"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
     </LinearLayout>
+
+
 
 </LinearLayout>

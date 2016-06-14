@@ -13,7 +13,10 @@ import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.activity.MainActivity;
 import com.luckyaf.strongbox.activity.base.BaseActivity;
 import com.luckyaf.strongbox.util.AppSettings;
+import com.luckyaf.strongbox.util.FileUtils;
 import com.luckyaf.strongbox.util.ToastUtils;
+
+import java.io.File;
 
 /**
  * 类描述：
@@ -42,6 +45,8 @@ public class FirstUseActivity extends BaseActivity{
     }
 
     public void initData(){
+        File file = FileUtils.mkDir("StrongBoxData");
+        AppSettings.setMyDir(this,file.getPath());
 
     }
 

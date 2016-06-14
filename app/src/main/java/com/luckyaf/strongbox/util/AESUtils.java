@@ -244,15 +244,13 @@ public  class AESUtils {
 
     //测试用例
     public static void test1(){
-        String content = "hello ssssssssssqqqqq2146346sgdntjut7iahba gsgeywygahanyky131525abcdefggsdfasdfasdf";
-        System.out.println(DateUtils.currentTime2String());
-        String pStr = encode(content );
+        String content = "hello strong box";
+        String thisKey = DateUtils.currentTimeKey();
+        String pStr = encode(content, thisKey);
         System.out.println("加密前："+content);
         System.out.println("加密后:" + pStr);
-        System.out.println(DateUtils.currentTime2String());
 
-        String postStr = decode(pStr);
-        System.out.println(DateUtils.currentTime2String());
+        String postStr = decode(pStr,thisKey);
         System.out.println("解密后："+ postStr );
     }
 

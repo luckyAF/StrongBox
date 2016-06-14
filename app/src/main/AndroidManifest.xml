@@ -3,8 +3,10 @@
     package="com.luckyaf.strongbox">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.GET_TASKS"/><!-- 获得正在运行的应用程序权限 -->
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -22,6 +24,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.login.LoginActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name"
             android:theme="@style/CommonAppTheme">
             <intent-filter>
@@ -30,26 +33,44 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name=".activity.MainActivity"
             android:theme="@style/CommonAppTheme" />
-        <activity android:name=".activity.login.FirstUseActivity"
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.login.FirstUseActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.SettingsActivity"
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".activity.SettingsActivity"
             android:theme="@style/EditTheme" />
         <activity
             android:name=".activity.login.CalculatorActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/CommonAppTheme" />
         <activity android:name=".activity.EditPassWordActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/EditTheme"/>
         <activity android:name=".activity.EditDiaryActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/EditTheme"/>
         <activity android:name=".activity.EditContactActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/EditTheme"/>
         <activity android:name=".activity.AddLockProgramActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/EditTheme"/>
         <activity android:name=".util.image.SelectImageActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/EditTheme"/>
         <activity android:name=".activity.AppLockActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CommonAppTheme"/>
+        <activity android:name=".activity.AddHideFileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CommonAppTheme"/>
+        <activity android:name=".activity.EditHideFileActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/CommonAppTheme"/>
 
         <!-- 开机启动 -->

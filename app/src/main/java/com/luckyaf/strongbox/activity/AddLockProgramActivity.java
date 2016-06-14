@@ -21,6 +21,7 @@ import com.luckyaf.strongbox.R;
 import com.luckyaf.strongbox.activity.base.BaseActivity;
 import com.luckyaf.strongbox.adapter.ProgramAdapter;
 import com.luckyaf.strongbox.bean.MyProgram;
+import com.luckyaf.strongbox.service.ProgramProtectService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -129,6 +130,8 @@ public class AddLockProgramActivity extends BaseActivity{
                         newApp.setPackageName(myPrograms.get(i).getResolveInfo().activityInfo.applicationInfo.packageName);
                         newApp.setClassName(myPrograms.get(i).getResolveInfo().activityInfo.applicationInfo.className);
                         MyApplication.daoMaster.newSession().getMyAppsDao().insert(newApp);
+                        stopService(new Intent(this, ProgramProtectService.class));
+                        startService(new Intent(this, ProgramProtectService.class));
                     }
                 }
                 finish();

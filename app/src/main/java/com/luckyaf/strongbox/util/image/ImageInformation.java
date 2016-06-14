@@ -9,6 +9,7 @@ import java.io.Serializable;
  */
 public class ImageInformation implements Serializable {
     public String path;//路径
+    public String pathName;
     public String key; //加密key
     public long photoId;//图片id
     public int width;//宽度
@@ -16,6 +17,7 @@ public class ImageInformation implements Serializable {
     private static final String prefix = "file://";
 
     public ImageInformation(String path) {
+        this.pathName = path;
         this.path = pathAddPreFix(path);
     }
 

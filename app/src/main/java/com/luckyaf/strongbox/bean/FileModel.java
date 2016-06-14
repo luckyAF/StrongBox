@@ -11,16 +11,20 @@ public class FileModel {
     private String name;
     private String path;
     private int fileType;
+    private String contentType;
+
+
 
     public FileModel() {
         super();
     }
 
-    public FileModel(String name, String path, int fileType) {
+    public FileModel(String name, String path, int fileType,String contentType) {
         super();
         this.name = name;
         this.path = path;
         this.fileType = fileType;
+        this.contentType = contentType;
     }
 
     public static int getFileDir() {
@@ -61,5 +65,12 @@ public class FileModel {
 
     public void setFileType(int fileType) {
         this.fileType = fileType;
+    }
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 }

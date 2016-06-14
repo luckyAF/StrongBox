@@ -85,6 +85,7 @@ public class BaseSettingsFragment extends PreferenceFragment {
             changeDialog();
         } else if (TextUtils.equals(key, getString(R.string.key_lock_permission))) {
             Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
+
             startActivity(intent);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

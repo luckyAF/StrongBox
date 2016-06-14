@@ -42,7 +42,7 @@ import java.util.LinkedHashMap;
 
 /**
  * 图片选择控件,有两种模式
- * <p>1.MODE_SINGLE_CROP,选择一张图片并且裁剪返回,用于头像选择</p>
+ * <p>1.MODE_SINGLE_CROP,选择一张图片,用于头像选择</p>
  * <h1>intent.putExtra(SelectImageActivity.EXTRA_MODE, SelectImageActivity.MODE_SINGLE_CROP);</h1>
  * <h1>startActivityForResult(intent, SelectImageActivity.REQUEST_PHOTO_CROP);</h1>
  *

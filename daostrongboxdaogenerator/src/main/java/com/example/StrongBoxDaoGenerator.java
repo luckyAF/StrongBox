@@ -77,10 +77,11 @@ public class StrongBoxDaoGenerator {
      * 添加 文件表
      **/
     public static void addDocument(Schema schema){
-        Entity document = schema.addEntity("document");
+        Entity document = schema.addEntity("MyDocument");
         document.addIdProperty();
         document.addStringProperty("oldFileName");
         document.addStringProperty("newFilename");
+        document.addStringProperty("contentType");
         document.addStringProperty("key");
         document.addStringProperty("encodeTime");
     }

@@ -27,6 +27,11 @@ public class DateUtils {
         return result;
     }
 
+    public static String currentTimeKey(){
+        String result = String.valueOf(System.nanoTime());
+        return result.substring(0,16);
+    }
+
     /**
      * String 转换 yyyy年MM月dd日 HH:mm
 

@@ -125,7 +125,7 @@ public class ProgramFragment extends BaseFragment{
         switch (v.getId()){
             case R.id.btn_add:
                 Intent intent = new Intent(getContext(), AddLockProgramActivity.class);
-                startActivityForResult(intent, Constant.REQUEST_CODE_EDIT_DIARY);
+                startActivityForResult(intent, Constant.REQUEST_CODE_EDIT_PROGRAM);
                 break;
             default:break;
         }

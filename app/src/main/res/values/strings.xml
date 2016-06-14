@@ -78,6 +78,18 @@
     <string name="title_activity_add_main">AddMainActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- 加密文件 -->
+    <string name="file_add_encrypt_file">添加加密文件</string>
+    <string name="file_confirm_encrypt_file">确认加密文件吗？</string>
+    <string name="file_old_name">文件原名</string>
+    <string name="file_now_name">文件当前名</string>
+    <string name="file_encrypt_name">文件加密时间</string>
+    <string name="file_delete_file">删除文件</string>
+    <string name="file_decryption_file">解密文件</string>
+    <string name="message_confirm_delete_file">确认删除文件吗？</string>
+    <string name="message_confirm_decryption_file">确认解密文件吗？</string>
+    <string name="file_deal_file">文件处理</string>
     
     <!-- 密码本 -->
     <string name="code_book_title">标题 :</string>

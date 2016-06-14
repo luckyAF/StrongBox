@@ -2,6 +2,7 @@ package com.luckyaf.strongbox.util;
 
 import android.content.Context;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.Key;
@@ -26,7 +27,7 @@ public class AppSettings {
     public static Boolean FirstUse;//是否是第一次使用
     public static Boolean lockProgram;//是否 加锁程序
     public static Boolean randomBoard;// 是否随机输入面板
-
+    public static String myDir;//应用目录
 
 
     public static void initSettings(Context context){
@@ -36,6 +37,7 @@ public class AppSettings {
         FirstUse = (Boolean)SPUtils.get(context,Constant.SP_FIRST_USE,true);
         lockProgram = (Boolean)SPUtils.get(context,Constant.SP_LOCK_PROGRAM,false);
         randomBoard = (Boolean)SPUtils.get(context,Constant.SP_RANDOM_BOARD,false);
+        myDir = (String)SPUtils.get(context,Constant.SP_STRONG_BOX_DIR,context.getFilesDir().getPath()+ File.separator+"StrongBonData");
     }
 
     public static int getLoginNumber() {
@@ -91,5 +93,15 @@ public class AppSettings {
         AppSettings.randomBoard = randomBoard;
         SPUtils.put(context,Constant.SP_RANDOM_BOARD,randomBoard);
     }
+
+    public static String getMyDir() {
+        return myDir;
+    }
+
+    public static void setMyDir(Context context,String myDir) {
+        AppSettings.myDir = myDir;
+        SPUtils.put(context,Constant.SP_STRONG_BOX_DIR,AppSettings.myDir);
+    }
+
 
 }

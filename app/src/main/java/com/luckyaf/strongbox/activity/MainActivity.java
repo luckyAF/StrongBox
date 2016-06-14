@@ -21,6 +21,7 @@ import com.luckyaf.strongbox.activity.base.BaseActivity;
 import com.luckyaf.strongbox.fragment.codeBook.CodeBookFragment;
 import com.luckyaf.strongbox.fragment.contact.ContactFragment;
 import com.luckyaf.strongbox.fragment.diary.DiaryFragment;
+import com.luckyaf.strongbox.fragment.file.DocumentFragment;
 import com.luckyaf.strongbox.fragment.file.FileMainFragment;
 import com.luckyaf.strongbox.fragment.index.IndexFragment;
 import com.luckyaf.strongbox.fragment.program.ProgramFragment;
@@ -144,7 +145,8 @@ public class MainActivity extends BaseActivity
                 isChanged = true;
                 break;
             case R.id.nav_file:
-                _currentFragment = FileMainFragment.newInstance(bundle);
+                //_currentFragment = FileMainFragment.newInstance(bundle);
+                _currentFragment = DocumentFragment.newInstance(bundle);
                 title = getString(R.string.menu_file);
                 isChanged = true;
                 break;

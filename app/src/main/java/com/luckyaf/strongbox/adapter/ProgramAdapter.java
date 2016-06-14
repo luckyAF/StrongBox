@@ -100,7 +100,7 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
                     MyApps thisApp = (MyApps) apps.get(0);
                     MyApplication.daoMaster.newSession().getMyAppsDao().delete(thisApp);
                     mContext.stopService(new Intent(mContext, ProgramProtectService.class));
-                    mContext.stopService(new Intent(mContext, ProgramProtectService.class));
+                    mContext.startService(new Intent(mContext, ProgramProtectService.class));
                 }
                 dialog.dismiss();
 
